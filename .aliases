@@ -1,1 +1,2 @@
 alias d="npm run dev"
+alias b="npm run build"
