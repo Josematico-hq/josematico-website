@@ -2,6 +2,15 @@
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout title="Hi, I'm Jose" />
+<script>
+    import locales from "../shared/translations";
+    const lang = localStorage.getItem("lang") || "en";
+    const translations = JSON.parse(JSON.stringify(locales[lang]));
+    document.querySelector("#test").textContent = translations.test;
+</script>
+
+<MainLayout title="Hi, I'm Jose">
+    <h1 id="test"></h1>
+</MainLayout>
 
 <style></style>

@@ -3,11 +3,6 @@
 
 import { DEFAULT_LANG } from './constants'
 
-export const t = async key => {
-  const translations = await import(`../locales/${getCurrentLanguage()}.json`)
-  return translations[key]
-}
-
 export const getCurrentLanguage = () => {
   const lang = localStorage?.getItem('lang')
   if (!lang) {
