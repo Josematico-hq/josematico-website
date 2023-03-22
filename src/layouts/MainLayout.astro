@@ -18,14 +18,14 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<main class="bg-stone-900 text-white">
+	<body class="dark">
+		<main class="bg-stone-900 dark:text-white">
 			<header class="flex flex-row justify-around">
 				<div class="flex flex-row justify-center items-center">
-					<button id="language-selector" class="p-4">🇬🇧</button>
-					<button id="style-mode-selector" class="p-4"
-						><SunIcon /></button
-					>
+					<button id="language-selector" class="p-4">🇪🇸</button>
+					<button id="style-mode-selector" class="p-4">
+						<SunIcon />
+					</button>
 					<div></div>
 				</div>
 				<div class="p-4">
@@ -39,7 +39,33 @@ const { title } = Astro.props;
 </html>
 
 <script>
+	import { getCurrentLanguage } from "../shared/utils";
+
 	const $ = (selector) => document.querySelector(selector);
 	const languageSelector = $("#language-selector");
 	const styleModeSelector = $("#style-mode-selector");
+
+	styleModeSelector.onclick = () => {
+		$("body").classList.toggle("dark");
+	};
+
+	languageSelector.onclick = () => {
+		const languages = [
+			{ icon: "🇪🇸", code: "es" },
+			{ icon: "🇬🇧", code: "en" },
+		];
+
+		const currentLanguage = languages.find(
+			(language) => language.code === getCurrentLanguage()
+		);
+		const currentIndex = languages.findIndex(
+			(language) => language.code === currentLanguage.code
+		);
+
+		const nextIndex = (currentIndex + 1) % languages.length;
+		const nextLanguage = languages[nextIndex];
+
+		localStorage.setItem("lang", nextLanguage.code);
+		languageSelector.textContent = currentLanguage.icon;
+	};
 </script>
