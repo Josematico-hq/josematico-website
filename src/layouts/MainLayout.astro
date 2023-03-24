@@ -1,6 +1,8 @@
 ---
 import MenuIcon from "../components/icons/MenuIcon.astro";
 import SunIcon from "../components/icons/SunIcon.astro";
+import i18next from "i18next";
+import { LanguageSelector } from "astro-i18next/components";
 
 export interface Props {
 	title: string;
@@ -10,7 +12,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={i18next.language}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -22,7 +24,8 @@ const { title } = Astro.props;
 		<main class="bg-stone-900 dark:text-white">
 			<header class="flex flex-row justify-around">
 				<div class="flex flex-row justify-center items-center">
-					<button id="language-selector" class="p-4">🇪🇸</button>
+					<!-- <button id="language-selector" class="p-4">🇪🇸</button> -->
+					<LanguageSelector showFlag={true} class="my-select-class" />
 					<button id="style-mode-selector" class="p-4">
 						<SunIcon />
 					</button>
@@ -39,38 +42,38 @@ const { title } = Astro.props;
 </html>
 
 <script>
-	import { languages } from "../shared/constants";
-	import { getCurrentLanguage } from "../shared/utils";
+	// import { languages } from "../shared/constants";
+	// import { getCurrentLanguage } from "../shared/utils";
 
-	const $ = (selector) => document.querySelector(selector);
-	const languageSelector = $("#language-selector");
-	const styleModeSelector = $("#style-mode-selector");
+	// const $ = (selector) => document.querySelector(selector);
+	// const languageSelector = $("#language-selector");
+	// const styleModeSelector = $("#style-mode-selector");
 
-	const currentLanguage = getCurrentLanguage();
-	const language = languages.find(
-		(language) => language.code === currentLanguage
-	);
+	// const currentLanguage = getCurrentLanguage();
+	// const language = languages.find(
+	// 	(language) => language.code === currentLanguage
+	// );
 
-	$("#language-selector").textContent = language.icon;
+	// $("#language-selector").textContent = language.icon;
 
-	styleModeSelector.onclick = () => {
-		$("body").classList.toggle("dark");
-	};
+	// styleModeSelector.onclick = () => {
+	// 	$("body").classList.toggle("dark");
+	// };
 
-	languageSelector.onclick = () => {
-		const currentLanguage = languages.find(
-			(language) => language.code === getCurrentLanguage()
-		);
-		const currentIndex = languages.findIndex(
-			(language) => language.code === currentLanguage.code
-		);
+	// languageSelector.onclick = () => {
+	// 	const currentLanguage = languages.find(
+	// 		(language) => language.code === getCurrentLanguage()
+	// 	);
+	// 	const currentIndex = languages.findIndex(
+	// 		(language) => language.code === currentLanguage.code
+	// 	);
 
-		const nextIndex = (currentIndex + 1) % languages.length;
-		const nextLanguage = languages[nextIndex];
+	// 	const nextIndex = (currentIndex + 1) % languages.length;
+	// 	const nextLanguage = languages[nextIndex];
 
-		localStorage.setItem("lang", nextLanguage.code);
-		languageSelector.textContent = currentLanguage.icon;
+	// 	localStorage.setItem("lang", nextLanguage.code);
+	// 	languageSelector.textContent = currentLanguage.icon;
 
-		window.location.reload();
-	};
+	// 	window.location.reload();
+	// };
 </script>
