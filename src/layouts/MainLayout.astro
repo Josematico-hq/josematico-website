@@ -1,6 +1,6 @@
 ---
-import MenuIcon from "../components/icons/MenuIcon.astro";
-import SunIcon from "../components/icons/SunIcon.astro";
+import MenuIcon from "../components/Icon/MenuIcon.astro";
+import SunIcon from "../components/Icon/SunIcon.astro";
 import i18next from "i18next";
 import { LanguageSelector } from "astro-i18next/components";
 
@@ -20,17 +20,21 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="dark">
-		<main class="bg-stone-900 dark:text-white">
+	<body class="dark bg-stone-900 dark:text-white">
+		<main class="max-w-5xl m-auto">
 			<header class="flex flex-row justify-around">
 				<div class="flex flex-row justify-center items-center">
-					<button id="language-selector" class="p-4">🇪🇸</button>
-					<select onchange="location = this.value;">
+					<select
+						id="language-selector"
+						onchange="location = this.value;"
+						class="appearance-none py-1 px-2 bg-gradient-to-tl from-blue-600 to-purple-600 my-2 dark:text-white rounded shadow-sm border dark:border-white"
+					>
+						<option data-display="🇬🇧" value="/" selected
+							>🇬🇧 English</option
+						>
 						<option data-display="🇪🇸" value="/es">🇪🇸 Español</option
 						>
-						<option data-display="🇬🇧" value="/">🇬🇧 English</option>
 					</select>
-					<LanguageSelector showFlag={true} class="my-select-class" />
 					<button id="style-mode-selector" class="p-4">
 						<SunIcon />
 					</button>
@@ -39,25 +43,30 @@ const { title } = Astro.props;
 				<div class="p-4">
 					<MenuIcon />
 				</div>
-				<slot />
 			</header>
+			<slot />
 		</main>
 		<style is:global></style>
 	</body>
+
+	<script>
+		import { DEFAULT_LANG, languages } from "../shared/constants";
+
+		const $ = (selector) => document.querySelector(selector);
+		const languageSelector = $("#language-selector");
+		const styleModeSelector = $("#style-mode-selector");
+
+		const detectLanguage = () => {
+			const { pathname } = window.location;
+			const [, pathLanguageCode] = pathname.split("/");
+			const language =
+				languages[pathLanguageCode || DEFAULT_LANG] || DEFAULT_LANG;
+
+			languageSelector.value = language?.slug;
+		};
+
+		document.addEventListener("DOMContentLoaded", function (event) {
+			detectLanguage();
+		});
+	</script>
 </html>
-
-<script>
-	import { languages } from "../shared/constants";
-
-	const $ = (selector) => document.querySelector(selector);
-	const languageSelector = $("#language-selector");
-	const styleModeSelector = $("#style-mode-selector");
-
-	languageSelector.onchange("change", function () {
-		var selectedOption =
-			languageSelector.options[languageSelector.selectedIndex];
-		var displayValue = selectedOption.getAttribute("data-display");
-		languageSelector.options[languageSelector.selectedIndex].text =
-			displayValue;
-	});
-</script>

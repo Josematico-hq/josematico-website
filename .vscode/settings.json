@@ -12,5 +12,8 @@
             "source.fixAll": true
         },
         "editor.formatOnSave": true
-    }
+    },
+    "cSpell.words": [
+        "astro"
+    ]
 }
