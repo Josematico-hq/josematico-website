@@ -1,10 +1,20 @@
 ---
 const { subtitle, centered, level } = Astro.props;
 const TagName = level || "h2";
+const textSize = () => {
+    const sizes = {
+        h1: "text-5xl",
+        h2: "text-4xl",
+        h3: "text-3xl",
+        h4: "text-2xl",
+        h5: "text-xl",
+    };
+    return sizes[TagName];
+};
 ---
 
 <TagName
-    class={`text-4xl md:text-6xl font-bold dark:text-white ${
+    class={`${textSize()} md:text-6xl font-bold dark:text-white leading-1 break-words ${
         centered && "text-center"
     }`}
 >

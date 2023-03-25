@@ -14,9 +14,9 @@ changeLanguage("en");
 
 <MainLayout title={t("home.title")}>
     <section class="flex flex-col justify-center items-center">
-        <Title level="h1" title={t("home.title")} main />
-        <Subtitle level="h2" subtitle={t("home.subtitle")} centered />
-        <div class="w-full rounded-lg my-4">
+        <Title level="h3" title={t("home.title")} main />
+        <Subtitle level="h1" subtitle={t("home.subtitle")} centered />
+        <div class="w-full rounded-lg mx-4 my-6">
             <img
                 src={TopImage}
                 class="object-cover rounded-lg"
@@ -25,7 +25,7 @@ changeLanguage("en");
                 alt="Pixel art portrait of me. A person with curly long black hair at the center"
             />
         </div>
-        <Button expanded ariaLabel={t("home.know-me-button-arial-label")}>
+        <Button ariaLabel={t("home.know-me-button-arial-label")}>
             <span> {t("home.know-me")}</span>
             <ChevronDown />
         </Button>
