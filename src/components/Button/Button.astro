@@ -1,11 +1,9 @@
 ---
-const { ariaLabel, expanded } = Astro.props;
+const { ariaLabel } = Astro.props;
 ---
 
 <button
-    class={`py-4 px-6 rounded text-lg dark:bg-white dark:text-black flex flex-row justify-center items-center ${
-        expanded && "w-full"
-    }`}
+    class="py-4 px-6 rounded font-medium text-lg dark:bg-white dark:text-black flex flex-row justify-center items-center w-full lg:w-auto"
     aria-label={ariaLabel}
 >
     <slot />
