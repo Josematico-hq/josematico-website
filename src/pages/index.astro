@@ -13,11 +13,12 @@ changeLanguage("en");
 <script></script>
 
 <MainLayout title={t("home.title")}>
-    <section class="flex flex-col justify-center items-center">
-        <Title level="h3" title={t("home.title")} main />
-        <Subtitle level="h1" subtitle={t("home.subtitle")} centered />
-        <div class="w-full rounded-lg mx-4 my-6">
+    <section class="flex flex-col justify-center">
+        <Title level="h3" title={t("home.title")} />
+        <Subtitle level="h1" subtitle={t("home.subtitle")} />
+        <div class="w-full rounded-lg my-4">
             <img
+                class="w-full"
                 src={TopImage}
                 class="object-cover rounded-lg"
                 width="1024"
