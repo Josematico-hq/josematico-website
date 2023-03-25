@@ -2,6 +2,10 @@
 const { subtitle, centered } = Astro.props;
 ---
 
-<h3 class={`text-6xl font-bold dark:text-white ${centered && "text-center"}`}>
+<h3
+    class={`text-4xl md:text-6xl font-bold dark:text-white ${
+        centered && "text-center"
+    }`}
+>
     {subtitle}
 </h3>
