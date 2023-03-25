@@ -1,13 +1,10 @@
 ---
-const { main, title } = Astro.props;
-const elementClass =
-    "text-3xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-purple-400 to-blue-600 my-2";
+const { title, level } = Astro.props;
+const TagName = level || "h1";
 ---
 
-{
-    main ? (
-        <h1 class={elementClass}>{title}</h1>
-    ) : (
-        <h2 class={elementClass}>{title}</h2>
-    )
-}
+<TagName
+    class="text-3xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-purple-400 to-blue-600 my-2"
+>
+    {title}
+</TagName>

@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import Title from "../components/Title/Title.astro";
 import Subtitle from "../components/Subtitle/Subtitle.astro";
-import TopImage from "/assets/images/top_illustration.png";
+import TopImage from "/assets/images/top_illustration.webp";
 
 changeLanguage("en");
 ---
@@ -12,12 +12,14 @@ changeLanguage("en");
 
 <MainLayout title={t("home.title")}>
     <section class="flex flex-col justify-center items-center">
-        <Title title={t("home.title")} main />
-        <Subtitle subtitle={t("home.subtitle")} centered />
+        <Title level="h1" title={t("home.title")} main />
+        <Subtitle level="h2" subtitle={t("home.subtitle")} centered />
         <div class="w-full rounded my-4">
             <img
                 src={TopImage}
                 class="object-cover h-48 w-96 rounded-lg"
+                width="1024"
+                height="1024"
                 alt="Pixel art portrait of me. A person with curly long black hair at the center"
             />
         </div>
