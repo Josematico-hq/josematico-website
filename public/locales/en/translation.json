@@ -2,6 +2,8 @@
     "home": {
         "title": "Hi, I'm Jose",
         "subtitle": "A Technical Lead Engineer, multidisciplinary developer and creative.",
-        "toggle-style-mode-button-aria-label": "This button toggles between light and dark mode styles"
+        "toggle-style-mode-button-aria-label": "This button toggles between light and dark mode styles",
+        "know-me": "Get to know me.",
+        "know-me-button-arial-label": "Click here to know more about me"
     }
 }

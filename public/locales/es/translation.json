@@ -1,6 +1,9 @@
 {
     "home": {
         "title": "Hola, soy Jose",
-        "subtitle": "Technical Lead Enginner, ingeniero de software multidisplinar y creativo."
+        "subtitle": "Technical Lead Enginner, ingeniero de software multidisplinar y creativo.",
+        "toggle-style-mode-button-aria-label": "Este botón alterna entre los estilos de modo claro y oscuro",
+        "know-me": "Conóceme.",
+        "know-me-button-arial-label": "Haz clic aquí para saber más sobre mí"
     }
 }
