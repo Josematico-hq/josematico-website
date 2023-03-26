@@ -1,11 +1,10 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { Trans } from "astro-i18next/components";
 import i18next, { t, changeLanguage } from "i18next";
-import Title from "../components/Title/Title.astro";
-import Subtitle from "../components/Subtitle/Subtitle.astro";
-import TopImage from "/assets/images/top_illustration.webp";
-import Button from "../components/Button/Button.astro";
-import ChevronDown from "../components/Icon/ChevronDown.astro";
+import LinkedInIcon from "../components/Icon/LinkedInIcon.astro";
+import InstagramIcon from "../components/Icon/InstagramIcon.astro";
+import GithubIcon from "../components/Icon/GithubIcon.astro";
 
 changeLanguage("en");
 ---
@@ -13,23 +12,37 @@ changeLanguage("en");
 <script></script>
 
 <MainLayout title={t("home.title")}>
-    <section class="flex flex-col justify-center">
-        <Title level="h3" title={t("home.title")} />
-        <Subtitle level="h1" subtitle={t("home.subtitle")} />
-        <div class="w-full rounded-lg my-4">
-            <img
-                class="w-full"
-                src={TopImage}
-                class="object-cover rounded-lg"
-                width="1024"
-                height="1024"
-                alt="Pixel art portrait of me. A person with curly long black hair at the center"
-            />
+    <section class="mt-24">
+        <span class="text-6xl">✌️</span>
+        <h1 class="text-5xl font-bold my-6">
+            <Trans i18nKey="home.header.title">
+                Software engineer,
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-b from-purple-400 to-blue-600 my-2"
+                    >multipotential</span
+                > and creative person.
+            </Trans>
+        </h1>
+
+        <h2 class="text-3xl my-4">{t("home.header.description")}</h2>
+        <div class="flex flex-row justify-between items-center w-24 mt-6">
+            <a href=""><LinkedInIcon /></a>
+            <a href=""><GithubIcon /></a>
+            <a href=""><InstagramIcon /></a>
         </div>
-        <Button ariaLabel={t("home.know-me-button-arial-label")}>
-            <span> {t("home.know-me")}</span>
-            <ChevronDown />
-        </Button>
+    </section>
+    <section class="my-20">
+        <h2
+            class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-purple-400 to-blue-600"
+        >
+            {t("home.about-me.title")}
+        </h2>
+        <h3 class="text-xl text-gray-400 mb-6">
+            {t("home.about-me.description")}
+        </h3>
+        <p class="text-xl my-4">{t("home.about-me.paragraph-1")}</p>
+        <p class="text-xl my-4">{t("home.about-me.paragraph-2")}</p>
+        <p class="text-xl my-4">{t("home.about-me.paragraph-3")}</p>
     </section>
 </MainLayout>
 

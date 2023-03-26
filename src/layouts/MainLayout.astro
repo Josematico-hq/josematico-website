@@ -20,63 +20,61 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="dark bg-stone-900 dark:text-white">
-		<main class="max-w-5xl m-auto px-10 dark:text-white">
-			<header class="flex flex-row justify-between py-4">
-				<div class="flex flex-row justify-center items-center">
-					<select
-						id="language-selector"
-						onchange="location = this.value;"
-						class="appearance-none py-1 px-2 dark:bg-gray-800 dark:text-white rounded shadow-sm border dark:border-gray-700 text-sm"
-					>
-						<option data-display="🇬🇧" value="/" selected
-							>🇬🇧 English</option
-						>
-						<option data-display="🇪🇸" value="/es">🇪🇸 Español</option
-						>
-					</select>
-					<button
-						id="style-mode-selector"
-						class="p-4"
-						aria-label={t(
-							"home.toggle-style-mode-button-aria-label"
-						)}
-					>
-						<SunIcon />
-					</button>
-					<div></div>
-				</div>
-				<div class="p-4">
-					<MenuIcon />
-				</div>
-			</header>
+	<body class="bg-stone-900 text-white font-sans">
+		<header
+			class="fixed inset-x-0 top-[20px] flex flex-row justify-center m-auto text-sm"
+		>
+			<nav
+				class="flex flex-row items-center backdrop-blur-md bg-black/30 rounded-full py-2 px-6 w-7/12"
+			>
+				<ul class="w-full flex flex-row justify-between">
+					<li>{t("home.nav.home")}</li>
+					<li>{t("home.nav.about-me")}</li>
+					<li>{t("home.nav.blog")}</li>
+				</ul>
+			</nav>
+			<div
+				class="w-10 h-10 backdrop-blur-md bg-black/30 flex flex-row items-center justify-center rounded-full"
+			>
+				<select
+					id="language-selector"
+					onchange="location = this.value;"
+					class="appearance-none bg-black/0 w-4 h-4"
+				>
+					<option data-display="🇬🇧" value="/" selected>🇬🇧</option>
+					<option data-display="🇪🇸" value="/es">🇪🇸</option>
+				</select>
+			</div>
+		</header>
+
+		<main class="mx-6">
 			<slot />
 		</main>
-		<style is:global>
-			html {
-				scroll-behavior: smooth;
-			}
-		</style>
 	</body>
-
-	<script>
-		import { DEFAULT_LANG, languages } from "../shared/constants";
-
-		const $ = (selector) => document.querySelector(selector);
-		const languageSelector = $("#language-selector");
-		const styleModeSelector = $("#style-mode-selector");
-
-		const detectLanguage = () => {
-			const { pathname } = window.location;
-			const [, pathLanguageCode] = pathname.split("/");
-			const language =
-				languages[pathLanguageCode || DEFAULT_LANG] || DEFAULT_LANG;
-
-			languageSelector.value = language?.slug;
-		};
-
-		document.addEventListener("DOMContentLoaded", function (event) {
-			detectLanguage();
-		});
-	</script>
+	<style is:global>
+		html {
+			scroll-behavior: smooth;
+		}
+	</style>
 </html>
+
+<script>
+	import { DEFAULT_LANG, languages } from "../shared/constants";
+
+	const $ = (selector) => document.querySelector(selector);
+	const languageSelector = $("#language-selector");
+	const styleModeSelector = $("#style-mode-selector");
+
+	const detectLanguage = () => {
+		const { pathname } = window.location;
+		const [, pathLanguageCode] = pathname.split("/");
+		const language =
+			languages[pathLanguageCode || DEFAULT_LANG] || DEFAULT_LANG;
+
+		languageSelector.value = language?.slug;
+	};
+
+	document.addEventListener("DOMContentLoaded", function (event) {
+		detectLanguage();
+	});
+</script>
