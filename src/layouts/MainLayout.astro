@@ -31,10 +31,10 @@ const { title } = Astro.props;
 					<li
 						class="text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
 					>
-						{t("home.nav.home")}
+						<a href="/">{t("home.nav.home")}</a>
 					</li>
-					<li>{t("home.nav.about-me")}</li>
-					<li>{t("home.nav.blog")}</li>
+					<li><a href="/about/">{t("home.nav.about-me")}</a></li>
+					<li><a href="/blog/">{t("home.nav.blog")}</a></li>
 				</ul>
 			</nav>
 			<div
