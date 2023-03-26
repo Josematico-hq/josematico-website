@@ -14,7 +14,15 @@
             "description": "Know a little more about me",
             "paragraph-1": "More than 10 years on the TI industry. Creative & multipotential person, entrepreneur, with a strong interest in personal and human development, as well as in leadership, ethics, and art.",
             "paragraph-2": "I have played  development, analysis, architecture and leadership roles within the teams I have worked in.",
-            "paragraph-3": "These last four years I've been working as a Tech Lead Engineer in an agile casino videogame development team using cutting-edge frontend technologies: ES6+, reactivity, statemanagement, webpack/vite, babel, i18next, etc."
+            "paragraph-3": "These last four years I've been working as a Tech Lead Engineer in an agile casino videogame development team using cutting-edge frontend technologies: ES6+, reactivity, statemanagement, webpack/vite, babel, i18next, etc.",
+            "about-me-more-button-1": "Know more",
+            "about-me-more-button-2": "Discover more info, download my resume, etc."
+        },
+        "posts": {
+            "title": "Last posts.",
+            "description": "Some stuff I write",
+            "no-posts": "No posts actually",
+            "more-posts-button": "More posts."
         }
     }
 }

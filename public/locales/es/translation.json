@@ -14,7 +14,15 @@
             "description": "Conóceme un poco más",
             "paragraph-1": "Más de 10 años en la industria de TI. Persona creativa y multipotencial, emprendedora, con un gran interés en el desarrollo personal y humano, así como en el liderazgo, la ética y el arte.",
             "paragraph-2": "He desempeñado roles de desarrollo, análisis, arquitectura y liderazgo dentro de los equipos en los que he trabajado.",
-            "paragraph-3": "En estos últimos cuatro años, he estado trabajando como Ingeniero Jefe de Tecnología en un equipo de desarrollo de videojuegos de casino ágil utilizando tecnologías de vanguardia para el frontend: ES6+, reactividad, gestión de estados, webpack/vite, babel, i18next, etc."
+            "paragraph-3": "En estos últimos cuatro años, he estado trabajando como Ingeniero Jefe de Tecnología en un equipo de desarrollo de videojuegos de casino ágil utilizando tecnologías de vanguardia para el frontend: ES6+, reactividad, gestión de estados, webpack/vite, babel, i18next, etc.",
+            "about-me-more-button-1": "Saber más",
+            "about-me-more-button-2": "Descubre más información, descarga mi currículum, etc."
+        },
+        "posts": {
+            "title": "Last posts.",
+            "description": "Some stuff I write",
+            "no-posts": "No hay posts actualmente",
+            "more-posts-button": "Más posts."
         }
     }
 }

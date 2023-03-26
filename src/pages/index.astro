@@ -5,8 +5,12 @@ import i18next, { t, changeLanguage } from "i18next";
 import LinkedInIcon from "../components/Icon/LinkedInIcon.astro";
 import InstagramIcon from "../components/Icon/InstagramIcon.astro";
 import GithubIcon from "../components/Icon/GithubIcon.astro";
+import ChevronRight from "../components/Icon/ChevronRight.astro";
+import DocumentTextIcon from "../components/Icon/DocumentTextIcon.astro";
 
 changeLanguage("en");
+
+const posts = [];
 ---
 
 <script></script>
@@ -14,11 +18,11 @@ changeLanguage("en");
 <MainLayout title={t("home.title")}>
     <section class="mt-24">
         <span class="text-6xl">✌️</span>
-        <h1 class="text-5xl font-bold my-6">
+        <h1 class="text-5xl font-bold my-6 break-words">
             <Trans i18nKey="home.header.title">
                 Software engineer,
                 <span
-                    class="text-transparent bg-clip-text bg-gradient-to-b from-purple-400 to-blue-600 my-2"
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 my-2"
                     >multipotential</span
                 > and creative person.
             </Trans>
@@ -26,14 +30,26 @@ changeLanguage("en");
 
         <h2 class="text-3xl my-4">{t("home.header.description")}</h2>
         <div class="flex flex-row justify-between items-center w-24 mt-6">
-            <a href=""><LinkedInIcon /></a>
-            <a href=""><GithubIcon /></a>
-            <a href=""><InstagramIcon /></a>
+            <a
+                href="https://www.linkedin.com/in/jocafernanro"
+                target="_blank"
+                rel="noreferrer"><LinkedInIcon /></a
+            >
+            <a
+                href="https://github.com/jocafernanro"
+                target="_blank"
+                rel="noreferrer"><GithubIcon /></a
+            >
+            <a
+                href="https://www.instagram.com/jocafernanro/"
+                target="_blank"
+                rel="noreferrer"><InstagramIcon /></a
+            >
         </div>
     </section>
     <section class="my-20">
         <h2
-            class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-purple-400 to-blue-600"
+            class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-green-200 to-green-500"
         >
             {t("home.about-me.title")}
         </h2>
@@ -43,7 +59,56 @@ changeLanguage("en");
         <p class="text-xl my-4">{t("home.about-me.paragraph-1")}</p>
         <p class="text-xl my-4">{t("home.about-me.paragraph-2")}</p>
         <p class="text-xl my-4">{t("home.about-me.paragraph-3")}</p>
+        <a
+            href="/about/"
+            target="_blank"
+            rel="noreferrer"
+            class="flex flex-row justify-between items-center p-6 my-6 bg-gray-800 rounded-lg shadow-lg border border-gray-500"
+        >
+            <div class="flex flex-col w-3/4">
+                <span class="font-bold"
+                    >{t("home.about-me.about-me-more-button-1")}</span
+                >
+                <span class="text-gray-500 leading-4"
+                    >{t("home.about-me.about-me-more-button-2")}</span
+                >
+            </div>
+            <ChevronRight />
+        </a>
+    </section>
+    <section>
+        <h2
+            class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
+        >
+            {t("home.posts.title")}
+        </h2>
+        <h3 class="text-xl text-gray-400 mb-6">
+            {t("home.posts.description")}
+        </h3>
+        {
+            posts?.length > 0 ? (
+                <a>
+                    <div>
+                        <div>new badge</div>
+                        <span>date</span>
+                    </div>
+                    <h4>post title</h4>
+                    <p>post preview</p>
+                </a>
+            ) : (
+                <div class="p-10 bg-gray-800 rounded-xl text-gray-600">
+                    {t("home.posts.no-posts")}
+                </div>
+            )
+        }
+        <a
+            href="/posts/"
+            target="_blank"
+            rel="noreferrer"
+            class="flex flex-row justify-center items-center p-4 my-6 bg-gray-800 rounded-lg shadow-lg border border-gray-500"
+        >
+            <span class="mr-2">{t("home.posts.more-posts-button")}</span>
+            <DocumentTextIcon />
+        </a>
     </section>
 </MainLayout>
-
-<style></style>
