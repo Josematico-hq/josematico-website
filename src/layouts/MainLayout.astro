@@ -3,6 +3,7 @@ import i18next, { t } from "i18next";
 import { localizePath } from "astro-i18next";
 
 const { title } = Astro.props;
+const menuItemSelected = (item) => Astro.url.pathname?.includes(item);
 ---
 
 <!DOCTYPE html>
@@ -60,18 +61,15 @@ const { title } = Astro.props;
 <script>
 	import { DEFAULT_LANG, languages } from "../shared/constants";
 
+	import { getLanguage } from "../shared/utils";
+
 	const $ = (selector) => document.querySelector(selector);
 	const languageSelector = $("#language-selector");
 	const styleModeSelector = $("#style-mode-selector");
 
 	const detectLanguage = () => {
-		const { pathname } = window.location;
-		const [, pathLanguageCode] = pathname.split("/");
-		const language =
-			languages[pathLanguageCode || DEFAULT_LANG] ||
-			languages[DEFAULT_LANG];
-
-		languageSelector.value = language?.code;
+		const language = getLanguage()?.code;
+		languageSelector.value = language;
 	};
 
 	document.addEventListener("DOMContentLoaded", function (event) {

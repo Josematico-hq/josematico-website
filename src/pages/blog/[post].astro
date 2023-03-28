@@ -1,0 +1,70 @@
+---
+import { changeLanguage } from "i18next";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+import CalendarIcon from "../../components/Icon/CalendarIcon.astro";
+import SmallHint from "../../components/SmallHint/SmallHint.astro";
+import { localizeDate } from "../../shared/utils";
+import ClockIcon from "../../components/Icon/ClockIcon.astro";
+
+changeLanguage("en");
+
+export async function getStaticPaths() {
+    const blogEntries = await getCollection("blog", ({ id }) => {
+        return id.startsWith("en/");
+    });
+    return blogEntries.map((entry) => ({
+        params: { post: entry.slug },
+        props: { entry },
+    }));
+}
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const { data: { title, pubDate, description, author, readTime, image }, } = entry;
+const formattedDate = localizeDate(pubDate);
+---
+
+<MainLayout title="Under construction">
+    <h1 class="font-bold text-6xl w-4/5 mb-4 mx-auto">{title}</h1>
+    <div class="flex flex-row w-4/5 m-auto">
+        <SmallHint HintIcon={CalendarIcon} text={formattedDate} />
+        <SmallHint HintIcon={ClockIcon} text={readTime} />
+    </div>
+    <img src={image.url} alt={image.alt} class="my-4 rounded-xl" />
+
+    <div class="post-content">
+        <Content />
+    </div>
+</MainLayout>
+
+<style is:global>
+    .post-content {
+        @apply text-lg flex flex-col justify-center w-4/5 m-auto;
+    }
+    .post-content h1 {
+        @apply text-6xl;
+    }
+
+    .post-content h2 {
+        @apply text-3xl;
+    }
+
+    .post-content h3 {
+        @apply text-2xl;
+    }
+
+    .post-content h1,
+    .post-content h2,
+    .post-content h3,
+    .post-content h4 {
+        @apply mt-3 mb-1;
+    }
+
+    .post-content p {
+        @apply my-4;
+    }
+
+    .post-content ul {
+        @apply list-disc w-11/12 m-auto mb-4;
+    }
+</style>
