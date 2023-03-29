@@ -21,8 +21,6 @@ const posts = blogEntries
     .slice(0, 3);
 ---
 
-<script></script>
-
 <MainLayout title={t("home.title")}>
     <section class="">
         <span class="text-6xl">✌️</span>
@@ -94,9 +92,14 @@ const posts = blogEntries
         </h3>
         {
             posts?.length > 0 ? (
-                posts.map(({ data: { title, pubDate }, slug }) => (
-                    <div class="grid md:grid-cols-2 md:grid-rows-2 gap-1">
-                        <PostCard pubDate={pubDate} title={title} slug={slug} />
+                posts.map(({ data: { title, pubDate, preview }, slug }) => (
+                    <div class="grid md:grid-cols-2 gap-1">
+                        <PostCard
+                            pubDate={pubDate}
+                            title={title}
+                            slug={slug}
+                            preview={preview}
+                        />
                     </div>
                 ))
             ) : (

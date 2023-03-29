@@ -1,6 +1,7 @@
 ---
 title: 'Hello world! Welcome to my blog 🎉🚀'
 pubDate: 2023-03-28
+preview: "Hello everyone! 👋 My name is Jose, and I'm thrilled to welcome you to my blog"
 author: 'José Carlos'
 readTime: '2 min'
 image:
