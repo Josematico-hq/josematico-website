@@ -20,8 +20,8 @@
             "about-me-more-button-2": "Descubre más información, descarga mi currículum, etc."
         },
         "posts": {
-            "title": "Last posts.",
-            "description": "Some stuff I write",
+            "title": "Últimos posts.",
+            "description": "Algunas de las cosas que escribo",
             "no-posts": "No hay posts actualmente",
             "more-posts-button": "Más posts."
         }
