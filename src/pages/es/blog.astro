@@ -1,8 +1,14 @@
 ---
+import { getCollection } from "astro:content";
 import { changeLanguage } from "i18next";
-import MainLayout from "../../layouts/MainLayout.astro";
+import BlogLayout from "../../layouts/BlogLayout.astro";
 
 changeLanguage("es");
+
+const blogEntries = await getCollection("blog", ({ id }) => {
+    return id.startsWith("es/");
+});
+const entries = blogEntries.slice(0, 5);
 ---
 
-<MainLayout title="Under construction">Under construction</MainLayout>
+<BlogLayout entries={entries} />

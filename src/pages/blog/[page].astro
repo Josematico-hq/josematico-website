@@ -1,0 +1,24 @@
+---
+import { changeLanguage } from "i18next";
+import { getCollection } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+changeLanguage("en");
+
+export async function getStaticPaths() {
+    const blogEntries = await getCollection("blog", ({ id }) => {
+        return id.startsWith("en/");
+    });
+    const postsPerPage = 5;
+    const totalPages = Math.ceil(blogEntries.length / postsPerPage);
+    return Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => {
+        const startIndex = (Number(page) - 1) * postsPerPage;
+        const endIndex = startIndex + postsPerPage;
+        const entries = blogEntries.slice(startIndex, endIndex);
+        return { params: { page: page }, props: { entries } };
+    });
+}
+const { entries } = Astro.props;
+---
+
+<BlogLayout entries={entries} />
