@@ -1,0 +1,28 @@
+---
+import { localizePath } from "astro-i18next";
+import { localizeDate } from "../../shared/utils";
+
+const { pubDate, title, preview, slug } = Astro.props;
+
+function isLessThanAWeekAgo(date) {
+    const dateToCompare = new Date(date);
+    const now = new Date();
+    const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+
+    return dateToCompare > oneWeekAgo;
+}
+
+const localizedDate = localizeDate(pubDate);
+const isNew = isLessThanAWeekAgo(localizedDate);
+---
+
+<div class="p-6 rounded-xl bg-gray-800">
+    <a href={localizePath(`/blog/${slug}`)} class="">
+        <div class="flex flex-row items-center mb-2">
+            {isNew && <div class="px-3 bg-blue-400 rounded-xl mr-2">new</div>}
+            <span class="font-bold">{localizedDate}</span>
+        </div>
+        <h4 class="font-bold text-lg">{title}</h4>
+        <p>post preview</p>
+    </a>
+</div>
