@@ -16,13 +16,15 @@ const localizedDate = localizeDate(pubDate);
 const isNew = isLessThanAWeekAgo(localizedDate);
 ---
 
-<div class="p-6 rounded-xl bg-gray-800">
-    <a href={localizePath(`/blog/${slug}`)} class="">
-        <div class="flex flex-row items-center mb-2">
+<a href={localizePath(`/blog/${slug}`)} class="">
+    <div
+        class="p-6 bg-slate-800 rounded-xl border border-gray-700 shadow-md hover:shadow-2xl mb-4"
+    >
+        <div class="flex flex-row items-center mb-4">
             {isNew && <div class="px-3 bg-blue-400 rounded-xl mr-2">new</div>}
-            <span class="font-bold">{localizedDate}</span>
+            <span class="text-gray-300">{localizedDate}</span>
         </div>
-        <h4 class="font-bold text-lg">{title}</h4>
-        <p>{preview}</p>
-    </a>
-</div>
+        <h4 class="font-bold text-xl md:text-2xl mb-1">{title}</h4>
+        <p class="text-lg md:text-xl text-slate-400 leading-5">{preview}</p>
+    </div>
+</a>
