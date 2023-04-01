@@ -59,7 +59,7 @@ const posts = blogEntries
         >
             {t("home.about-me.title")}
         </h2>
-        <h3 class="text-xl text-gray-400 mb-6">
+        <h3 class="text-xl text-slate-300 mb-4">
             {t("home.about-me.description")}
         </h3>
         <p class="text-xl my-4">{t("home.about-me.paragraph-1")}</p>
@@ -68,13 +68,13 @@ const posts = blogEntries
         <a
             href={localizePath("/about")}
             rel="noreferrer"
-            class="flex flex-row justify-between items-center p-6 my-6 bg-gray-800 rounded-lg shadow-lg border border-gray-500 md:max-w-sm"
+            class="flex flex-row justify-between items-center p-6 my-6 bg-gray-800 rounded-lg shadow-lg border border-gray-500 md:max-w-sm focus:translate-y-1"
         >
             <div class="flex flex-col w-3/4">
                 <span class="font-bold"
                     >{t("home.about-me.about-me-more-button-1")}</span
                 >
-                <span class="text-gray-500 leading-4"
+                <span class="text-slate-400 leading-4"
                     >{t("home.about-me.about-me-more-button-2")}</span
                 >
             </div>
@@ -87,7 +87,7 @@ const posts = blogEntries
         >
             {t("home.posts.title")}
         </h2>
-        <h3 class="text-xl text-gray-400 mb-6">
+        <h3 class="text-xl text-slate-300 mb-4">
             {t("home.posts.description")}
         </h3>
         {
@@ -113,7 +113,7 @@ const posts = blogEntries
                 <a
                     href={localizePath("/blog")}
                     rel="noreferrer"
-                    class="flex flex-row justify-center items-center p-4 my-6 bg-gray-800 rounded-lg shadow-lg border border-gray-500 md:max-w-sm"
+                    class="flex flex-row justify-center items-center p-4 my-6 bg-gray-800 rounded-lg shadow-lg border border-gray-500 md:max-w-sm focus:translate-y-1"
                 >
                     <span class="mr-2">
                         {t("home.posts.more-posts-button")}
