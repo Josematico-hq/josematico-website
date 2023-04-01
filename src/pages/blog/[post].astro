@@ -6,6 +6,9 @@ import CalendarIcon from "../../components/Icon/CalendarIcon.astro";
 import SmallHint from "../../components/SmallHint/SmallHint.astro";
 import { localizeDate } from "../../shared/utils";
 import ClockIcon from "../../components/Icon/ClockIcon.astro";
+import FacebookIcon from "../../components/Icon/FacebookIcon.astro";
+import LinkedInIcon from "../../components/Icon/LinkedInIcon.astro";
+import Headings from "../../components/Headings/Headings.astro";
 
 changeLanguage("en");
 
@@ -19,27 +22,78 @@ export async function getStaticPaths() {
     }));
 }
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content, headings } = await entry.render();
 const { data: { title, pubDate, description, author, readTime, image }, } = entry;
 const formattedDate = localizeDate(pubDate);
 ---
 
 <MainLayout title="Under construction">
-    <h1 class="font-bold text-6xl lg:w-4/5 mb-4 mx-auto">{title}</h1>
-    <div class="flex flex-row lg:w-4/5 m-auto">
+    <div class="w-full rounded mb-6">
+        <img
+            src={image.url}
+            alt={image.alt}
+            class="object-cover h-80 w-full rounded-xl"
+        />
+    </div>
+    <h1 class="font-bold text-5xl mb-6 mx-auto leading-tight text-center mt-12">
+        {title}
+    </h1>
+    <div class="flex flex-row m-auto justify-center items-center mb-10">
         <SmallHint HintIcon={CalendarIcon} text={formattedDate} />
         <SmallHint HintIcon={ClockIcon} text={readTime} />
     </div>
-    <img src={image.url} alt={image.alt} class="my-4 rounded-xl" />
-
+    <Headings headings={headings} />
     <div class="post-content">
         <Content />
     </div>
 </MainLayout>
 
+<script>
+    const openPopup = (url) => {
+        const popupWidth = 600;
+        const popupHeight = 400;
+        const left = (window.screen.width - popupWidth) / 2;
+        const top = (window.screen.height - popupHeight) / 2;
+
+        window.open(
+            url,
+            "Compartir en redes sociales",
+            `width=${popupWidth},height=${popupHeight},top=${top},left=${left},scrollbars=no`
+        );
+    };
+
+    const shareConfig = {
+        facebook: {
+            getUrl: (postUrl, text) =>
+                `https://www.facebook.com/sharer/sharer.php?u=${postUrl}&t=${text}`,
+        },
+        twitter: {
+            getUrl: (postUrl, text) =>
+                `https://twitter.com/intent/tweet?url=${postUrl}&text=${text}`,
+        },
+        linkedin: {
+            getUrl: (postUrl) =>
+                `https://www.linkedin.com/sharing/share-offsite/?url=${postUrl}`,
+        },
+    };
+
+    document.querySelectorAll(".share-button").forEach((button) => {
+        const platform = button.id.split("-")[1];
+        const { getUrl } = shareConfig[platform];
+
+        button.addEventListener("click", () => {
+            const postUrl = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent(document.title);
+            const url = getUrl(postUrl, text);
+
+            openPopup(url);
+        });
+    });
+</script>
+
 <style is:global>
     .post-content {
-        @apply text-lg flex flex-col justify-center lg:w-4/5 m-auto;
+        @apply text-lg leading-8;
     }
     .post-content h1 {
         @apply text-6xl;
@@ -57,7 +111,7 @@ const formattedDate = localizeDate(pubDate);
     .post-content h2,
     .post-content h3,
     .post-content h4 {
-        @apply font-bold mt-3 mb-1;
+        @apply font-bold mt-12 mb-6;
     }
 
     .post-content p {
@@ -66,5 +120,9 @@ const formattedDate = localizeDate(pubDate);
 
     .post-content ul {
         @apply list-disc w-11/12 m-auto mb-4;
+    }
+
+    .post-content ul li {
+        @apply pl-4;
     }
 </style>
