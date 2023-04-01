@@ -1,5 +1,6 @@
 ---
-title: '¡Hola mundo! Bienvenidos a mi blog 🎉🚀'
+title: '¡Hola mundo! Bienvenidos a mi blog: Mi propio relato'
+description: 'Embárcate en un fascinante viaje de autodescubrimiento, crecimiento personal y aventuras inolvidables.'
 pubDate: 2023-03-28
 preview: "¡Hola a todos! 👋 Mi nombre es Jose, y estoy emocionadísimo de darles la bienvenida a mi blog"
 author: 'José Carlos'

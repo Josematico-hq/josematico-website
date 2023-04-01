@@ -1,5 +1,6 @@
 ---
-title: 'Hello world! Welcome to my blog 🎉🚀'
+title: 'Hello world! Welcome to my blog: My own tale'
+description: "Embark on a captivating journey through self-discovery, personal growth, and unforgettable adventures."
 pubDate: 2023-03-28
 preview: "Hello everyone! 👋 My name is Jose, and I'm thrilled to welcome you to my blog"
 author: 'José Carlos'
