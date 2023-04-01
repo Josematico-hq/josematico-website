@@ -28,17 +28,17 @@ const formattedDate = localizeDate(pubDate);
 ---
 
 <MainLayout title="Under construction">
-    <div class="w-full rounded mb-6">
-        <img
-            src={image.url}
-            alt={image.alt}
-            class="object-cover h-80 w-full rounded-xl"
-        />
-    </div>
-    <h1 class="font-bold text-5xl mb-6 mx-auto leading-tight text-center mt-12">
+    <h1
+        class="font-bold text-3xl sm:text-4xl md:text-5xl mt-40 mb-4 mx-4 md:mx-10 leading-9 text-center"
+    >
         {title}
     </h1>
-    <div class="flex flex-row m-auto justify-center items-center mb-10">
+    <h2
+        class="text-xl sm:text-2xl md:text-3xl mx-4 md:mx-10 text-center text-slate-300 mb-10"
+    >
+        {description}
+    </h2>
+    <div class="flex flex-row m-auto justify-center items-center mb-14">
         <SmallHint HintIcon={CalendarIcon} text={formattedDate} />
         <SmallHint HintIcon={ClockIcon} text={readTime} />
     </div>
