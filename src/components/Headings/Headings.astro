@@ -1,0 +1,20 @@
+---
+import { localizePath } from "astro-i18next/index";
+
+const { headings = [] } = Astro.props;
+---
+
+{
+    headings?.length > 0 && (
+        <nav class="bg-slate-800 py-8 px-10 rounded-lg mb-8">
+            <div class="font-bold text-lg mb-4">TABLE OF CONTENTS</div>
+            <ul class="list-decimal pl-4">
+                {headings.map(({ text, slug }) => (
+                    <li class="mb-1">
+                        <a href={`#${slug}`}>{text}</a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    )
+}
