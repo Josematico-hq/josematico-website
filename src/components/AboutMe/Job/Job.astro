@@ -1,0 +1,14 @@
+---
+const {
+    job: { time, title, description },
+} = Astro.props;
+---
+
+<article class="my-6">
+    <span class="text-lg text-slate-400">{time}</span>
+    <h3 class="font-bold mt-2">{title}</h3>
+    {
+        description?.length > 0 &&
+            description.map((text) => <p class="my-1">{text}</p>)
+    }
+</article>

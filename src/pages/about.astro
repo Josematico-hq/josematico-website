@@ -1,8 +1,100 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
 import MainLayout from "../layouts/MainLayout.astro";
+import RegularParagraph from "../components/AboutMe/RegularParagraph/RegularParagraph.astro";
+import SectionTitle from "../components/AboutMe/SectionTitle/SectionTitle.astro";
+import InternalLink from "../components/InternalLink/InternalLink.astro";
+import Job from "../components/AboutMe/Job/Job.astro";
 
 changeLanguage("en");
+
+const jobs = [
+    {
+        company: "Sopra Steria",
+        time: "nov 2018 - current",
+        title: "Tech Lead Engineer",
+        description: [
+            "Phase 1: Airbus Defense and Space: Software Architecture, analysis and development. Python, blockchain, Angular, Microservices, UIPath, gRPC, etc.",
+            "Phase 2 (Current): The Workshop - Working on Casino Videogames as Tech Lead Engineer on an international environment with Frontend Technologies and Agile Methodologies: WebGL, Pixi.js, Javascript (ES6+) OOP and design Patterns, Mobx, Reactivity, Jest.",
+        ],
+    },
+    {
+        company: "Eduka",
+        time: "jun. 2018 - 2022",
+        title: "Cofounder",
+        description: [
+            "I love learning. I dedicate a part of my day to it, so that I can improve myself constantly. That is why I want to bring this desire to everyone. Transmitting that great feeling of seeing yourself improving daily. Eduka, a start-up focused on the learning process of younger children by helping both, them and their parents to better manage their everyday growth.",
+        ],
+    },
+    {
+        company: "Indra",
+        time: "jun. 2017 - 0ct.2018",
+        title: "Software Analyst",
+        description: [
+            "Analysis and development of RPAs.",
+            "Analysis and development of computer tools/solutions to facilitate and optimise management times in Endesa's BackOffice tasks. ",
+            "Data management and exploitation projects through MySQL databases, Access, ASP.NET, .NET , etc. ",
+            "Development of software to automate tasks with Python + Selenium, Python and Ui Path.",
+        ],
+    },
+    {
+        company: "Insous",
+        time: "ene. 2015- jun. 2017",
+        title: "Cofounder",
+        description: [
+            "Personal project in the world of development. Design and development of innovative software solutions for particular and business needs.",
+        ],
+    },
+    {
+        company: "Indra",
+        time: "abr. 2014 - abr.2015",
+        title: "Software Analyst",
+        description: [
+            "Analysis and development of computer tools/solutions to facilitate and optimise management times in Endesa's BackOffice tasks. ",
+            "Data management and exploitation projects through MySQL, Access, ASP.NET, .NET databases, etc. ",
+            "Software development to automate tasks",
+        ],
+    },
+];
 ---
 
-<MainLayout title="Under construction">Under construction</MainLayout>
+<MainLayout title={t("general.about-me")}>
+    <h1
+        class="font-bold text-4xl md:text-5xl mt-32 mb-4 mx-4 md:mx-10 leading-9 text-center"
+    >
+        {t("about")}
+    </h1>
+    <nav class="text-2xl md:text-3xl mx-4 md:mx-10 text-center text-slate-300">
+        <Trans i18nKey="about-me.nav">
+            Discover my <InternalLink link="#professional-experience">
+                professional experience
+            </InternalLink>, delve into my <InternalLink link="#work-history">
+                work history
+            </InternalLink>, examine my <InternalLink link="#cv">
+                CV
+            </InternalLink>, learn about my <InternalLink link="#education">
+                education
+            </InternalLink>, and uncover <InternalLink link="#personal-things">
+                personal insights
+            </InternalLink> about me.
+        </Trans>
+    </nav>
+    <section id="professional-experience" class="mt-20">
+        <SectionTitle>
+            {t("about-me.professional-experience.title")}
+        </SectionTitle>
+        <RegularParagraph>
+            {t("about-me.professional-experience.paragraph-1")}
+        </RegularParagraph>
+
+        <RegularParagraph>
+            {t("about-me.professional-experience.paragraph-2")}
+        </RegularParagraph>
+    </section>
+
+    <section id="work-history" class="mt-20">
+        <SectionTitle>{t("about-me.work-history.title")}</SectionTitle>
+        {jobs.length > 0 && jobs.map((job) => <Job job={job} />)}
+    </section>
+</MainLayout>

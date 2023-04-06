@@ -7,10 +7,10 @@ const { headings = [] } = Astro.props;
 {
     headings?.length > 0 && (
         <nav class="bg-slate-800 py-6 px-8 md:py-8 md:px-10 rounded-lg mb-8 tracking-wide">
-            <div class="font-bold text-lg md:text-xl mb-4">
+            <div class="text-slate-300 font-bold text-lg md:text-xl mb-4">
                 TABLE OF CONTENTS
             </div>
-            <ul class="list-decimal md:text-lg pl-4">
+            <ul class="text-slate-400 list-decimal md:text-lg pl-4">
                 {headings.map(({ text, slug }) => (
                     <li class="mb-1">
                         <a href={`#${slug}`}>{text}</a>

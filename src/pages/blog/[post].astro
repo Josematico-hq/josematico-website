@@ -29,7 +29,7 @@ const formattedDate = localizeDate(pubDate);
 
 <MainLayout title="Under construction">
     <h1
-        class="font-bold text-4xl md:text-5xl mt-40 mb-4 mx-4 md:mx-10 leading-9 text-center"
+        class="font-bold text-4xl md:text-5xl mt-32 mb-4 mx-4 md:mx-10 leading-9 text-center"
     >
         {title}
     </h1>
@@ -38,7 +38,7 @@ const formattedDate = localizeDate(pubDate);
     >
         {description}
     </h2>
-    <div class="flex flex-row m-auto justify-center items-center mb-10">
+    <div class="flex flex-row m-auto justify-center items-center mb-16">
         <SmallHint HintIcon={CalendarIcon} text={formattedDate} />
         <SmallHint HintIcon={ClockIcon} text={readTime} />
     </div>
@@ -93,7 +93,7 @@ const formattedDate = localizeDate(pubDate);
 
 <style is:global>
     .post-content {
-        @apply text-lg leading-8;
+        @apply text-xl leading-8;
     }
     .post-content h1 {
         @apply text-6xl;

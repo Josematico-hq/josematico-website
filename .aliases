@@ -1,3 +1,4 @@
 alias d="npm run dev"
 alias b="npm run build"
 alias g="npx astro-i18next generate"
+alias l="npm run localize"

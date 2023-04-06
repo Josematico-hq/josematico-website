@@ -1,0 +1,11 @@
+---
+const { link } = Astro.props;
+---
+
+<a href={link}>
+    <span
+        class="bg-slate-800 py-1 px-2 text-xl text-slate-300 rounded-lg hover:underline hover:underline-offset-4"
+    >
+        <slot />
+    </span>
+</a>
