@@ -38,55 +38,7 @@
             "paragraph-2": "My journey doesn't end there, though. I've also ventured into the freelance world, honing a variety of skills along the way. As a genuine tech lover, I find it thrilling to tackle software challenges in my free time, creating products and developing ideas. I'm all about building, creating, and solving problems—that's what keeps me going!"
         },
         "work-history": {
-            "title": "Work History",
-            "jobs": [
-                {
-                    "company": "Sopra Steria",
-                    "time": "nov 2018 - current",
-                    "title": "Tech Lead Engineer",
-                    "description": [
-                        "Phase 1: Airbus Defense and Space: Software Architecture, analysis and development. Python, blockchain, Angular, Microservices, UIPath, gRPC, etc.",
-                        "Phase 2 (Current): The Workshop - Working on Casino Videogames as Tech Lead Engineer on an international environment with Frontend Technologies and Agile Methodologies: WebGL, Pixi.js, Javascript (ES6+) OOP and design Patterns, Mobx, Reactivity, Jest.",
-                    ]
-                },
-                {
-                    "company": "Eduka",
-                    "time": "jun. 2018 - 2022",
-                    "title": "Cofounder",
-                    "description": [
-                        "I love learning. I dedicate a part of my day to it, so that I can improve myself constantly. That is why I want to bring this desire to everyone. Transmitting that great feeling of seeing yourself improving daily. Eduka, a start-up focused on the learning process of younger children by helping both, them and their parents to better manage their everyday growth.",
-                    ]
-                },
-                {
-                    "company": "Indra",
-                    "time": "jun. 2017 - 0ct.2018",
-                    "title": "Software Analyst",
-                    "description": [
-                        "Analysis and development of RPAs.",
-                        "Analysis and development of computer tools/solutions to facilitate and optimise management times in Endesa's BackOffice tasks. ",
-                        "Data management and exploitation projects through MySQL databases, Access, ASP.NET, .NET , etc. ",
-                        "Development of software to automate tasks with Python + Selenium, Python and Ui Path."
-                    ]
-                },
-                {
-                    "company": "Insous",
-                    "time": "ene. 2015- jun. 2017",
-                    "title": "Cofounder",
-                    "description": [
-                        "Personal project in the world of development. Design and development of innovative software solutions for particular and business needs.",
-                    ]
-                },
-                {
-                    "company": "Indra",
-                    "time": "abr. 2014 - abr.2015",
-                    "title": "Software Analyst",
-                    "description": [
-                        "Analysis and development of computer tools/solutions to facilitate and optimise management times in Endesa's BackOffice tasks. ",
-                        "Data management and exploitation projects through MySQL, Access, ASP.NET, .NET databases, etc. ",
-                        "Software development to automate tasks"
-                    ]
-                }
-            ]
+            "title": "Work History"
         }
     }
 }
