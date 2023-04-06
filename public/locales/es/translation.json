@@ -5,7 +5,7 @@
     "home": {
         "title": "Hola, soy José",
         "nav": {
-            "home": "Inicio.",
+            "home": "Home.",
             "about-me": "Acerca de mí.",
             "blog": "Blog."
         },
@@ -34,7 +34,7 @@
         "professional-experience": {
             "title": "Experiencia profesional",
             "paragraph-1": "¡Hola! Soy José, un apasionado ingeniero de software con más de 10 años de experiencia en la industria tecnológica. Como líder técnico en Sopra Steria, he estado profundizando en tecnologías frontend, metodologías ágiles y soluciones orientadas a devops/nube durante más de cuatro años. Me enorgullezco de guiar a mi equipo a través de procesos, innovación y aprendizaje.",
-            "paragraph-2": "Mi viaje no termina ahí, sin embargo. También me he adentrado en el mundo freelance, perfeccionando una variedad de habilidades en el camino. Como auténtico amante de la tecnología, me resulta emocionante abordar desafíos de software en mi tiempo libre, creando productos y desarrollando ideas. ¡Me encanta construir, crear y resolver problemas, eso es lo que me mantiene en marcha!"
+            "paragraph-2": "Sin embargo, mi viaje no termina ahí. También me he adentrado en el mundo freelance, perfeccionando una variedad de habilidades en el camino. Como auténtico amante de la tecnología, me resulta emocionante abordar desafíos de software en mi tiempo libre, creando productos y desarrollando ideas. ¡Me encanta construir, crear y resolver problemas, eso es lo que me hace hace seguir adelante!"
         },
         "work-history": {
             "title": "Historial laboral"
