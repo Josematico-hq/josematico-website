@@ -6,7 +6,7 @@ import { HeadHrefLangs } from "astro-i18next/components";
 const { title } = Astro.props;
 const isMenuItemActivated = (menuItemPath) => {
 	const pathname = Astro.url?.pathname || "/";
-	if (menuItemPath === `${localizePath("/")}/`)
+	if (menuItemPath === `${localizePath("/")}`)
 		return menuItemPath === pathname;
 	return Astro.url?.pathname?.startsWith(menuItemPath);
 };
