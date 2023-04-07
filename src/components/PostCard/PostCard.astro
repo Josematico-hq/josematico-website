@@ -17,14 +17,37 @@ const isNew = isLessThanAWeekAgo(localizedDate);
 ---
 
 <a href={localizePath(`/blog/${slug}`)} class="">
-    <div
-        class="p-6 bg-slate-800 rounded-xl border border-gray-700 shadow-md hover:shadow-2xl mb-4"
+    <article
+        class="p-8 bg-slate-800 rounded-xl border-2 border-gray-700 transition-colors ease-linear duration-200 hover:text-yellow-300 hover:border-yellow-200"
     >
-        <div class="flex flex-row items-center mb-4">
+        <div class="flex flex-row items-center mb-1">
             {isNew && <div class="px-3 bg-blue-400 rounded-xl mr-2">new</div>}
-            <span class="text-gray-300">{localizedDate}</span>
+            <span data-client-date={localizedDate} class="text-gray-300"
+                >{localizedDate}</span
+            >
         </div>
-        <h4 class="font-bold text-xl md:text-2xl mb-1">{title}</h4>
-        <p class="text-lg md:text-xl text-slate-400 leading-5">{preview}</p>
-    </div>
+        <h4 class="font-bold text-xl md:text-2xl mb-1">
+            {title}
+        </h4>
+        <p class="text-lg md:text-xl text-slate-300 leading-5">{preview}</p>
+    </article>
 </a>
+
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const dateElements = document.querySelectorAll("[data-client-date]");
+
+        dateElements.forEach((element) => {
+            const dateString = element.getAttribute("data-client-date");
+            const date = new Date(dateString);
+            const userLocale = navigator.language;
+            const formatter = new Intl.DateTimeFormat(userLocale, {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+            });
+
+            element.textContent = formatter.format(date);
+        });
+    });
+</script>

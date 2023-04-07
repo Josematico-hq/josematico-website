@@ -11,15 +11,8 @@ export const getLanguage = () => {
   return language
 }
 
-export const getLanguageFromFileName = (filename = '') => {
-  const regex = /\/[a-z]{2}(?=\/|$)/
-  const language = filename.match(regex, '')?.[0]?.replace('/', '') || DEFAULT_LANG
-
-  return language
-}
-
 export const localizeDate = date => {
   const pubDateLocalized = new Date(date)
-  const options = { day: 'numeric', month: 'numeric', year: 'numeric' }
+  const options = { day: 'numeric', month: 'short', year: 'numeric' }
   return pubDateLocalized.toLocaleDateString(undefined, options)
 }
