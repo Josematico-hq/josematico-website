@@ -148,6 +148,7 @@
     },
     "blog": {
         "meta-description": "Discover my thoughts and ideas on various topics in the 'Blog' section, where you can find my latest 5 posts. I invite you to read and engage with the content I've created.",
-        "description": "Welcome to the Latest Blog Posts section, where you can catch up on what I've been writing about recently or dive into all my previous posts."
+        "description": "Welcome to the Latest Blog Posts section, where you can catch up on what I've been writing about recently or dive into all my previous posts.",
+        "table-of-contents": "Table of contents"
     }
 }

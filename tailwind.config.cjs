@@ -16,6 +16,9 @@ module.exports = {
       },
       transitionProperty: {
         'background-position': 'background-position'
+      },
+      animation: {
+        fadeInUp: 'fadeInUp 0.5s ease-in-out forwards'
       }
     }
   },

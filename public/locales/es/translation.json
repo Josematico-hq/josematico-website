@@ -148,6 +148,7 @@
     },
     "blog": {
         "meta-description": "Descubre mis pensamientos e ideas sobre diversos temas en la sección 'Blog', donde puedes encontrar mis últimas 5 publicaciones. Te invito a leer y participar con el contenido que he creado.",
-        "description": "Bienvenido a la sección de Últimas Publicaciones del Blog, donde podrás ponerte al día sobre los temas en los que he estado escribiendo recientemente o sumergirte en todas mis publicaciones anteriores."
+        "description": "Bienvenido a la sección de Últimas Publicaciones del Blog, donde podrás ponerte al día sobre los temas en los que he estado escribiendo recientemente o sumergirte en todas mis publicaciones anteriores.",
+        "table-of-contents": "Tabla de contenidos"
     }
 }

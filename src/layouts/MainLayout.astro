@@ -31,7 +31,9 @@ const { title, description } = Astro.props;
 			</select>
 		</header>
 
-		<main class="mx-6 md:mx-20 text-xl leading-7 tracking-normal">
+		<main
+			class="mx-6 md:mx-20 text-xl leading-7 tracking-normal animate-fadeInUp"
+		>
 			<slot />
 		</main>
 
@@ -42,6 +44,17 @@ const { title, description } = Astro.props;
 		<style is:global>
 			html {
 				scroll-behavior: smooth;
+			}
+
+			@keyframes fadeInUp {
+				0% {
+					opacity: 0;
+					transform: translateY(1rem);
+				}
+				100% {
+					opacity: 1;
+					transform: translateY(0);
+				}
 			}
 		</style>
 		<script>
