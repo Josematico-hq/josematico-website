@@ -58,13 +58,68 @@
         "professional-experience": {
             "title": "Experiencia profesional",
             "paragraph-1": "¡Hola! Soy José, un apasionado ingeniero de software con más de 10 años de experiencia en la industria tecnológica. Como líder técnico en Sopra Steria, he estado profundizando en tecnologías frontend, metodologías ágiles y soluciones orientadas a devops/nube durante más de cuatro años. Me enorgullezco de guiar a mi equipo a través de procesos, innovación y aprendizaje.",
-            "paragraph-2": "Sin embargo, mi viaje no termina ahí. También me he adentrado en el mundo freelance, perfeccionando una variedad de habilidades en el camino. Como auténtico amante de la tecnología, me resulta emocionante abordar desafíos de software en mi tiempo libre, creando productos y desarrollando ideas. ¡Me encanta construir, crear y resolver problemas, eso es lo que me hace hace seguir adelante!"
+            "paragraph-2": "Sin embargo, mi viaje no termina ahí. También me he adentrado en el mundo freelance, perfeccionando una variedad de habilidades en el camino. Como auténtico amante de la tecnología, me resulta emocionante abordar desafíos de software en mi tiempo libre, creando productos y desarrollando ideas. ¡Me encanta construir, crear y resolver problemas, eso es lo que me hace hace seguir adelante!",
+            "job": {
+                "sopra": {
+                    "company": "Sopra Steria",
+                    "time": "nov 2018 - actualidad",
+                    "title": "Teach Lead Engineer",
+                    "description-1": "Fase 1: Airbus Defense and Space: Arquitectura de software, análisis y desarrollo. Python, blockchain, Angular, Microservicios, UIPath, gRPC, etc.",
+                    "description-2": "Fase 2 (Actual): The Workshop - Trabajando en videojuegos de casino como Ingeniero Líder en Tecnología en un entorno internacional con tecnologías Frontend y metodologías ágiles: WebGL, Pixi.js, Javascript (ES6+) OOP y patrones de diseño, Mobx, Reactividad, Jest."
+                },
+                "eduka": {
+                    "company": "Eduka",
+                    "time": "jun. 2018 - 2022",
+                    "title": "Cofundador",
+                    "description-1": "Me encanta aprender. Dedico una parte de mi día a ello, para poder mejorar constantemente. Es por eso que quiero llevar este deseo a todos. Transmitir esa gran sensación de verte mejorar a diario. Eduka, una startup enfocada en el proceso de aprendizaje de los niños más pequeños, ayudando tanto a ellos como a sus padres a gestionar mejor su crecimiento diario."
+                },
+                "indra-2": {
+                    "company": "Indra",
+                    "time": "nov 2018 - actualidad",
+                    "title": "Software Analyst",
+                    "description-1": "Análisis y desarrollo de RPAs.",
+                    "description-2": "Análisis y desarrollo de herramientas/soluciones informáticas para facilitar y optimizar los tiempos de gestión en las tareas de BackOffice de Endesa.",
+                    "description-3": "Proyectos de gestión y explotación de datos a través de bases de datos MySQL, Access, ASP.NET, .NET , etc.",
+                    "description-4": "Desarrollo de software para automatizar tareas con Python + Selenium, Python y Ui Path."
+                },
+                "insous": {
+                    "company": "Insous",
+                    "time": "ene. 2015- jun. 2017",
+                    "title": "Cofundador",
+                    "description-1": "Proyecto personal en el mundo del desarrollo. Diseño y desarrollo de soluciones de software innovadoras para necesidades particulares y empresariales."
+                },
+                "indra-1": {
+                    "company": "Indra",
+                    "time": "abr. 2014 - abr. 2015",
+                    "title": "Software Analyst",
+                    "description-1": "Análisis y desarrollo de herramientas/soluciones informáticas para facilitar y optimizar los tiempos de gestión en las tareas de BackOffice de Endesa.",
+                    "description-2": "Proyectos de gestión y explotación de datos a través de bases de datos MySQL, Access, ASP.NET, .NET, etc.",
+                    "description-3": "Desarrollo de software para automatizar tareas"
+                }
+            }
         },
         "work-history": {
             "title": "Historial laboral"
         },
         "education": {
-            "title": "Educación"
+            "title": "Educación",
+            "learning": {
+                "university": {
+                    "institution": "Universidad de Sevilla",
+                    "title": "Grado en Ingeniería Informática - Ingeniería del Software, Ingenieríaa Informática",
+                    "time": "sept. 2013"
+                },
+                "grado-superior": {
+                    "institution": "I.E.S Punta del Verde",
+                    "title": "Grado Superior Administración de Sistemas Informáticos, Administración de sistemas informáticos en red",
+                    "time": "2011 - 2013"
+                },
+                "grado-medio": {
+                    "institution": "I.E.S Ruiz Gijón",
+                    "title": "Grado Medio Explotación de Sistemas Informáticos",
+                    "time": "2008 - 2010"
+                }
+            }
         },
         "cv": {
             "title": "Curriculum Vitae"

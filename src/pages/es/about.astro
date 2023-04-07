@@ -11,71 +11,37 @@ import DownloadIcon from "../../components/Icon/DownloadIcon.astro";
 
 changeLanguage("es");
 
-const jobs = [
-    {
-        company: "Sopra Steria",
-        time: "nov 2018 - current",
-        title: "Tech Lead Engineer",
-        description: [
-            "Phase 1: Airbus Defense and Space: Software Architecture, analysis and development. Python, blockchain, Angular, Microservices, UIPath, gRPC, etc.",
-            "Phase 2 (Current): The Workshop - Working on Casino Videogames as Tech Lead Engineer on an international environment with Frontend Technologies and Agile Methodologies: WebGL, Pixi.js, Javascript (ES6+) OOP and design Patterns, Mobx, Reactivity, Jest.",
-        ],
-    },
-    {
-        company: "Eduka",
-        time: "jun. 2018 - 2022",
-        title: "Cofounder",
-        description: [
-            "I love learning. I dedicate a part of my day to it, so that I can improve myself constantly. That is why I want to bring this desire to everyone. Transmitting that great feeling of seeing yourself improving daily. Eduka, a start-up focused on the learning process of younger children by helping both, them and their parents to better manage their everyday growth.",
-        ],
-    },
-    {
-        company: "Indra",
-        time: "jun. 2017 - 0ct.2018",
-        title: "Software Analyst",
-        description: [
-            "Analysis and development of RPAs.",
-            "Analysis and development of computer tools/solutions to facilitate and optimise management times in Endesa's BackOffice tasks. ",
-            "Data management and exploitation projects through MySQL databases, Access, ASP.NET, .NET , etc. ",
-            "Development of software to automate tasks with Python + Selenium, Python and Ui Path.",
-        ],
-    },
-    {
-        company: "Insous",
-        time: "ene. 2015- jun. 2017",
-        title: "Cofounder",
-        description: [
-            "Personal project in the world of development. Design and development of innovative software solutions for particular and business needs.",
-        ],
-    },
-    {
-        company: "Indra",
-        time: "abr. 2014 - abr.2015",
-        title: "Software Analyst",
-        description: [
-            "Analysis and development of computer tools/solutions to facilitate and optimise management times in Endesa's BackOffice tasks. ",
-            "Data management and exploitation projects through MySQL, Access, ASP.NET, .NET databases, etc. ",
-            "Software development to automate tasks",
-        ],
-    },
-];
-const learning = [
-    {
-        institution: "Universidad de Sevilla",
-        title: "Grado en Ingenier\u00EDa Inform\u00E1tica - Ingenier\u00EDa del Software, Ingenier\u00EDa Inform\u00E1tica",
-        time: "sept.2013",
-    },
-    {
-        institution: "I.E.S Punta del Verde",
-        title: "Grado Superior Administraci\u00F3n de Sistemas Inform\u00E1ticos, Administraci\u00F3n de sistemas inform\u00E1ticos en red",
-        time: "2011 - 2013",
-    },
-    {
-        institution: "I.E.S Ruiz Gij\u00F3n",
-        title: "Grado Medio Explotaci\u00F3n de Sistemas Inform\u00E1ticos, T\u00E9cnico Inform\u00E1tico",
-        time: "2008 - 2010",
-    },
-];
+const jobKeys = ["sopra", "eduka", "indra-2", "insous", "indra-1"];
+const getJobKeyBase = (jobKey) => `about-me.professional-experience.job.${jobKey}`;
+const jobs = await jobKeys.map((jobKey) => {
+    const getDescriptions = (jobKey) => {
+        const descriptions = [];
+        let i = 1;
+        let key = `${getJobKeyBase(jobKey)}.description-${i}`;
+        let description = t(key);
+        while (description !== key) {
+            descriptions.push(description);
+            i++;
+            key = `${getJobKeyBase(jobKey)}.description-${i}`;
+            description = t(key);
+        }
+        return descriptions;
+    };
+    const job = {
+        company: t(`${getJobKeyBase(jobKey)}.company`),
+        time: t(`${getJobKeyBase(jobKey)}.time`),
+        title: t(`${getJobKeyBase(jobKey)}.title`),
+        description: getDescriptions(jobKey),
+    };
+    return job;
+});
+const learningKeys = ["university", "grado-superior", "grado-medio"];
+const getLearningKeyBase = (learningKey) => `about-me.education.learning.${learningKey}`;
+const learning = learningKeys.map((education) => ({
+    institution: t(`${getLearningKeyBase(education)}.institution`),
+    title: t(`${getLearningKeyBase(education)}.title`),
+    time: t(`${getLearningKeyBase(education)}.time`),
+}));
 ---
 
 <MainLayout title={t("general.about-me")}>

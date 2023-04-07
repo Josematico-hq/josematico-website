@@ -1,6 +1,7 @@
 ---
 import i18next, { t } from "i18next";
 import { localizePath } from "astro-i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
 
 const { title } = Astro.props;
 const isMenuItemActivated = (menuItemPath) => {
@@ -14,6 +15,7 @@ const isMenuItemActivated = (menuItemPath) => {
 <html lang={i18next.language}>
 	<head>
 		<meta charset="UTF-8" />
+		<HeadHrefLangs />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -72,41 +74,44 @@ const isMenuItemActivated = (menuItemPath) => {
 		</main>
 
 		<footer class="text-center my-20 text-slate-400">
-			© 2023 Josemático | All rights reserved
+			<span class="block">© 2023 Josemático | All rights reserved</span>
+			<span>Design and development made with ❤️ by me.</span>
 		</footer>
+		<style is:global>
+			html {
+				scroll-behavior: smooth;
+			}
+		</style>
+		<script>
+			import { DEFAULT_LANG, languages } from "../shared/constants";
+
+			import { getLanguage } from "../shared/utils";
+
+			const $ = (selector) => document.querySelector(selector);
+			const languageSelector = $("#language-selector");
+			const styleModeSelector = $("#style-mode-selector");
+
+			const detectLanguage = () => {
+				const language = getLanguage()?.code;
+				languageSelector.value = language;
+			};
+
+			document.addEventListener("DOMContentLoaded", function (event) {
+				detectLanguage();
+			});
+
+			languageSelector.onchange = ({ target: { value } }) => {
+				const regex = /\/[a-z]{2}(?=\/|$)/;
+				const isDefaultLanguage = DEFAULT_LANG === value;
+				const langPathName = !isDefaultLanguage ? `/${value}` : "";
+				const cleanedPathName = window.location.pathname.replace(
+					regex,
+					""
+				);
+				const localizedPath = `${langPathName}${cleanedPathName}`;
+
+				window.location.pathname = localizedPath;
+			};
+		</script>
 	</body>
-	<style is:global>
-		html {
-			scroll-behavior: smooth;
-		}
-	</style>
 </html>
-
-<script>
-	import { DEFAULT_LANG, languages } from "../shared/constants";
-
-	import { getLanguage } from "../shared/utils";
-
-	const $ = (selector) => document.querySelector(selector);
-	const languageSelector = $("#language-selector");
-	const styleModeSelector = $("#style-mode-selector");
-
-	const detectLanguage = () => {
-		const language = getLanguage()?.code;
-		languageSelector.value = language;
-	};
-
-	document.addEventListener("DOMContentLoaded", function (event) {
-		detectLanguage();
-	});
-
-	languageSelector.onchange = ({ target: { value } }) => {
-		const regex = /\/[a-z]{2}(?=\/|$)/;
-		const isDefaultLanguage = DEFAULT_LANG === value;
-		const langPathName = !isDefaultLanguage ? `/${value}` : "";
-		const cleanedPathName = window.location.pathname.replace(regex, "");
-		const localizedPath = `${langPathName}${cleanedPathName}`;
-
-		window.location.pathname = localizedPath;
-	};
-</script>
