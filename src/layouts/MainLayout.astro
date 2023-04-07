@@ -6,7 +6,8 @@ import { HeadHrefLangs } from "astro-i18next/components";
 const { title } = Astro.props;
 const isMenuItemActivated = (menuItemPath) => {
 	const pathname = Astro.url?.pathname || "/";
-	if (menuItemPath === localizePath("/")) return menuItemPath === pathname;
+	if (menuItemPath === `${localizePath("/")}/`)
+		return menuItemPath === pathname;
 	return Astro.url?.pathname?.startsWith(menuItemPath);
 };
 ---
@@ -30,7 +31,7 @@ const isMenuItemActivated = (menuItemPath) => {
 			>
 				<ul class="w-full flex flex-row justify-between">
 					<li
-						class={` ${
+						class={`${
 							isMenuItemActivated(localizePath("/"))
 								? "text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
 								: "text-white"
@@ -39,7 +40,7 @@ const isMenuItemActivated = (menuItemPath) => {
 						<a href={localizePath("/")}>{t("home.nav.home")}</a>
 					</li>
 					<li
-						class={` ${
+						class={`${
 							isMenuItemActivated(localizePath("/about"))
 								? "text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
 								: "text-white"
