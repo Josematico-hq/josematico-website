@@ -2,6 +2,7 @@
     "general": {
         "home": "Home",
         "about-me": "About me",
+        "language-selector-aria-label": "Language selector to change the website language between Spanish and English",
         "post-card-link-aria-label": "Read the full post called",
         "heading-link-aria-label": "Click here to navigate into the post point",
         "internal-link-aria-label": "Click here to navigate into the page point",

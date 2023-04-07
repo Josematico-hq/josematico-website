@@ -2,6 +2,7 @@
     "general": {
         "home": "Home",
         "about-me": "Acerca de mí",
+        "language-selector-aria-label": "Selector de idiomas para cambiar entre Español e Inglés",
         "post-card-link-aria-label": "Lee al completo el artículo",
         "heading-link-aria-label": "Haz click aquí para navegar hasta el punto del post",
         "internal-link-aria-label": "Haz click aquí para navegar hasta el punto de la página",

@@ -22,6 +22,9 @@ const { title, description } = Astro.props;
 			class="fixed inset-x-0 top-[20px] flex flex-row justify-center m-auto text-sm font-bold xs:text-lg sm:text-xl z-10"
 		>
 			<MainNavigation />
+			<label for="language-selector" class="sr-only"
+				>{t("general.language-selector-aria-label")}</label
+			>
 			<select
 				id="language-selector"
 				class="appearance-none backdrop-blur-md bg-black/30 text-2xl py-2 px-4 rounded-full cursor-pointer focus:rounded-xl"
