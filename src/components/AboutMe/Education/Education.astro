@@ -1,0 +1,11 @@
+---
+const {
+    education: { institution, title, time },
+} = Astro.props;
+---
+
+<article class="my-6 flex flex-col">
+    <h3 class="font-bold mt-2">{institution}</h3>
+    <span>{title}</span>
+    <span class="text-slate-400">{time}</span>
+</article>

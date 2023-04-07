@@ -6,6 +6,8 @@ import RegularParagraph from "../components/AboutMe/RegularParagraph/RegularPara
 import SectionTitle from "../components/AboutMe/SectionTitle/SectionTitle.astro";
 import InternalLink from "../components/InternalLink/InternalLink.astro";
 import Job from "../components/AboutMe/Job/Job.astro";
+import Education from "../components/AboutMe/Education/Education.astro";
+import DownloadIcon from "../components/Icon/DownloadIcon.astro";
 
 changeLanguage("en");
 
@@ -57,6 +59,23 @@ const jobs = [
         ],
     },
 ];
+const learning = [
+    {
+        institution: "Universidad de Sevilla",
+        title: "Grado en Ingenier\u00EDa Inform\u00E1tica - Ingenier\u00EDa del Software, Ingenier\u00EDa Inform\u00E1tica",
+        time: "sept.2013",
+    },
+    {
+        institution: "I.E.S Punta del Verde",
+        title: "Grado Superior Administraci\u00F3n de Sistemas Inform\u00E1ticos, Administraci\u00F3n de sistemas inform\u00E1ticos en red",
+        time: "2011 - 2013",
+    },
+    {
+        institution: "I.E.S Ruiz Gij\u00F3n",
+        title: "Grado Medio Explotaci\u00F3n de Sistemas Inform\u00E1ticos, T\u00E9cnico Inform\u00E1tico",
+        time: "2008 - 2010",
+    },
+];
 ---
 
 <MainLayout title={t("general.about-me")}>
@@ -66,19 +85,26 @@ const jobs = [
         {t("about")}
     </h1>
     <nav class="text-2xl md:text-3xl mx-4 md:mx-10 text-center text-slate-300">
-        <Trans i18nKey="about-me.nav">
-            Discover my <InternalLink link="#professional-experience">
-                professional experience
-            </InternalLink>, delve into my <InternalLink link="#work-history">
-                work history
-            </InternalLink>, examine my <InternalLink link="#cv">
-                CV
-            </InternalLink>, learn about my <InternalLink link="#education">
-                education
-            </InternalLink>, and uncover <InternalLink link="#personal-things">
-                personal insights
-            </InternalLink> about me.
-        </Trans>
+        {`${t("about-me.nav.professional-experience.pre-text")} `}
+        <InternalLink link="#professional-experience">
+            {t("about-me.nav.professional-experience.anchor-text")}
+        </InternalLink>{
+            `, ${t("about-me.nav.work-history.pre-text")} `
+        }<InternalLink link="#work-history">
+            {`${t("about-me.nav.work-history.anchor-text")}`}
+        </InternalLink>{`, ${t("about-me.nav.cv.pre-text")} `}<InternalLink
+            link="#cv"
+        >
+            {t("about-me.nav.cv.anchor-text")}
+        </InternalLink>{
+            `, ${t("about-me.nav.education.pre-text")} `
+        }<InternalLink link="#education">
+            {t("about-me.nav.education.anchor-text")}
+        </InternalLink>{
+            `, ${t("about-me.nav.personal-things.pre-text")} `
+        }<InternalLink link="#personal-things">
+            {t("about-me.nav.personal-things.anchor-text")}
+        </InternalLink>{` ${t("about-me.nav.personal-things.final-text")}`}
     </nav>
     <section id="professional-experience" class="mt-20">
         <SectionTitle>
@@ -96,5 +122,34 @@ const jobs = [
     <section id="work-history" class="mt-20">
         <SectionTitle>{t("about-me.work-history.title")}</SectionTitle>
         {jobs.length > 0 && jobs.map((job) => <Job job={job} />)}
+    </section>
+
+    <section id="cv" class="mt-20">
+        <SectionTitle>{t("about-me.cv.title")}</SectionTitle>
+        <div>Will be available soon</div>
+    </section>
+
+    <section id="education" class="mt-20">
+        <SectionTitle>{t("about-me.education.title")}</SectionTitle>
+        {
+            learning.length > 0 &&
+                learning.map((education) => <Education education={education} />)
+        }
+    </section>
+
+    <section id="personal-things" class="mt-20">
+        <SectionTitle>{t("about-me.personal-things.title")}</SectionTitle>
+        <RegularParagraph>
+            {t("about-me.personal-things.paragraph-1")}
+        </RegularParagraph>
+        <RegularParagraph>
+            {t("about-me.personal-things.paragraph-2")}
+        </RegularParagraph>
+        <RegularParagraph>
+            {t("about-me.personal-things.paragraph-3")}
+        </RegularParagraph>
+        <RegularParagraph>
+            {t("about-me.personal-things.paragraph-4")}
+        </RegularParagraph>
     </section>
 </MainLayout>

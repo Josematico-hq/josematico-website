@@ -30,7 +30,31 @@
     },
     "about-me": {
         "title": "Conóceme",
-        "nav": " Descubre mi <0> experiencia profesional </0>, profundiza en mi <1> historial laboral </1>, examina mi <2>CV</2>, aprende sobre mi <3>educación</3> y descubre <4> información personal </4> sobre mí.",
+        "nav": {
+            "nav": {
+                "professional-experience": {
+                    "pre-text": "Descubre mi",
+                    "anchor-text": "experiencia profsional"
+                },
+                "work-history": {
+                    "pre-text": "profundiza en mi",
+                    "anchor-text": "historial laboral"
+                },
+                "cv": {
+                    "pre-text": "examina mi",
+                    "anchor-text": "CV"
+                },
+                "education": {
+                    "pre-text": "aprende sobre mi ",
+                    "anchor-text": "educación"
+                },
+                "personal-things": {
+                    "pre-text": "y descubre",
+                    "anchor-text": "algunas cosillas más",
+                    "final-text": "sobre mí."
+                }
+            }
+        },
         "professional-experience": {
             "title": "Experiencia profesional",
             "paragraph-1": "¡Hola! Soy José, un apasionado ingeniero de software con más de 10 años de experiencia en la industria tecnológica. Como líder técnico en Sopra Steria, he estado profundizando en tecnologías frontend, metodologías ágiles y soluciones orientadas a devops/nube durante más de cuatro años. Me enorgullezco de guiar a mi equipo a través de procesos, innovación y aprendizaje.",
@@ -38,6 +62,19 @@
         },
         "work-history": {
             "title": "Historial laboral"
+        },
+        "education": {
+            "title": "Educación"
+        },
+        "cv": {
+            "title": "Curriculum Vitae"
+        },
+        "personal-things": {
+            "title": "Algo sobre mi",
+            "paragraph-1": "Como una persona naturalmente curiosa, aprendo continuamente a través de mi diversa gama de pasatiempos e intereses. Entre estos, los videojuegos ocupan un lugar especial en mi corazón, ya que me permiten explorar mundos imaginarios y vivir aventuras únicas sin salir de mi silla.",
+            "paragraph-2": "La música es otra de mis pasiones; me conecta con mis emociones e inspira a crear y compartir historias a través de diversos géneros y estilos. Además, la fotografía me ha enseñado a capturar la belleza de los momentos fugaces y apreciar los detalles que a menudo pasamos por alto en nuestra vida diaria.",
+            "paragraph-3": "Mi fascinación por la tecnología me mantiene siempre en busca de las últimas innovaciones, las cuales tienen el potencial de mejorar nuestras vidas y conectar con otros de maneras sorprendentes. El desarrollo personal, parte integral de mi vida, enfatiza la importancia del crecimiento y la evolución como individuo. La lectura nutre mi mente al introducirme a nuevas ideas y perspectivas, alimentando mi pasión interminable por aprender.",
+            "paragraph-4": "En mi búsqueda por mantenerme actualizado, hago un esfuerzo consciente por enriquecer continuamente mi conocimiento en diversos campos. Esto implica dedicar tiempo a leer artículos, asistir a talleres y participar en cursos en línea que abarcan una amplia gama de temas, desde las tendencias emergentes en tecnología hasta los últimos avances en ciencia y arte. Al expandir mis horizontes, no solo mejoro mi conjunto de habilidades, sino que también garantizo que aporto una perspectiva equilibrada en cada proyecto que emprendo."
         }
     }
 }

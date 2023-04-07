@@ -31,7 +31,29 @@
     },
     "about-me": {
         "title": "Get to know me",
-        "nav": " Discover my <0> professional experience </0>, delve into my <1> work history </1>, examine my <2>CV</2>, learn about my <3>education</3>, and uncover <4> personal insights </4> about me.",
+        "nav": {
+            "professional-experience": {
+                "pre-text": "Discover my",
+                "anchor-text": "professional experience"
+            },
+            "work-history": {
+                "pre-text": "delve into my",
+                "anchor-text": "work history"
+            },
+            "cv": {
+                "pre-text": "examine my",
+                "anchor-text": "CV"
+            },
+            "education": {
+                "pre-text": "learn about my",
+                "anchor-text": "education"
+            },
+            "personal-things": {
+                "pre-text": "and uncover my",
+                "anchor-text": "personal insights",
+                "final-text": "about me."
+            }
+        },
         "professional-experience": {
             "title": "Professional Experience",
             "paragraph-1": "Hey there! I'm Jose, a passionate software engineer with over 10 years of experience in the tech industry. As a Tech Lead Engineer at Sopra Steria, I've been diving deep into frontend technologies, agile methodologies, and devops/cloud-oriented solutions for more than four years. I pride myself on guiding my team through processes, innovation and learning.",
@@ -39,6 +61,19 @@
         },
         "work-history": {
             "title": "Work History"
+        },
+        "education": {
+            "title": "Education"
+        },
+        "cv": {
+            "title": "Curriculum Vitae"
+        },
+        "personal-things": {
+            "title": "Personal Insights",
+            "paragraph-1": "As a naturally curious individual, I continuously learn through my diverse range of hobbies and interests. Among these, video games hold a special place in my heart, allowing me to explore imaginary worlds and experience unique adventures without leaving my chair.",
+            "paragraph-2": "Music is another passion of mine, it connects me with my emotions and inspires me to create and share stories across various genres and styles. Additionally, photography has taught me to capture the beauty of fleeting moments and appreciate the often-overlooked details in our daily lives.",
+            "paragraph-3": "My fascination with technology keeps me on the lookout for the latest innovations, which have the potential to improve our lives and connect with others in surprising ways. Personal development, an integral part of my life, emphasizes the importance of growth and evolution as an individual. Reading nourishes my mind by introducing new ideas and perspectives, fueling my never-ending passion for learning.",
+            "paragraph-4": "In my pursuit to stay up-to-date, I make a conscious effort to continuously enrich my knowledge across various fields. This involves dedicating time to reading articles, attending workshops, and engaging in online courses that cover a wide range of subjects, from emerging trends in technology to the latest breakthroughs in science and art. By expanding my horizons, I not only enhance my skill set but also ensure that I bring a well-rounded perspective to every project I undertake."
         }
     }
 }
