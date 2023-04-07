@@ -31,28 +31,26 @@
     "about-me": {
         "title": "Conóceme",
         "nav": {
-            "nav": {
-                "professional-experience": {
-                    "pre-text": "Descubre mi",
-                    "anchor-text": "experiencia profsional"
-                },
-                "work-history": {
-                    "pre-text": "profundiza en mi",
-                    "anchor-text": "historial laboral"
-                },
-                "cv": {
-                    "pre-text": "examina mi",
-                    "anchor-text": "CV"
-                },
-                "education": {
-                    "pre-text": "aprende sobre mi ",
-                    "anchor-text": "educación"
-                },
-                "personal-things": {
-                    "pre-text": "y descubre",
-                    "anchor-text": "algunas cosillas más",
-                    "final-text": "sobre mí."
-                }
+            "professional-experience": {
+                "pre-text": "Descubre mi",
+                "anchor-text": "experiencia profsional"
+            },
+            "work-history": {
+                "pre-text": "profundiza en mi",
+                "anchor-text": "historial laboral"
+            },
+            "cv": {
+                "pre-text": "examina mi",
+                "anchor-text": "CV"
+            },
+            "education": {
+                "pre-text": "aprende sobre mi ",
+                "anchor-text": "educación"
+            },
+            "personal-things": {
+                "pre-text": "y descubre",
+                "anchor-text": "algunas cosillas más",
+                "final-text": "sobre mí."
             }
         },
         "professional-experience": {
