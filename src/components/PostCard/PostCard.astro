@@ -32,22 +32,3 @@ const isNew = isLessThanAWeekAgo(localizedDate);
         <p class="text-lg md:text-xl text-slate-300 leading-5">{preview}</p>
     </article>
 </a>
-
-<script>
-    window.addEventListener("DOMContentLoaded", () => {
-        const dateElements = document.querySelectorAll("[data-client-date]");
-
-        dateElements.forEach((element) => {
-            const dateString = element.getAttribute("data-client-date");
-            const date = new Date(dateString);
-            const userLocale = navigator.language;
-            const formatter = new Intl.DateTimeFormat(userLocale, {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-            });
-
-            element.textContent = formatter.format(date);
-        });
-    });
-</script>

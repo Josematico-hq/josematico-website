@@ -88,14 +88,12 @@ const posts = blogEntries
         {
             posts?.length > 0 ? (
                 posts.map(({ data: { title, pubDate, preview }, slug }) => (
-                    <div class="">
-                        <PostCard
-                            pubDate={pubDate}
-                            title={title}
-                            slug={slug}
-                            preview={preview}
-                        />
-                    </div>
+                    <PostCard
+                        pubDate={pubDate}
+                        title={title}
+                        slug={slug}
+                        preview={preview}
+                    />
                 ))
             ) : (
                 <div class="p-10 bg-gray-800 rounded-xl text-gray-600">
