@@ -1,15 +1,9 @@
 ---
 import i18next, { t } from "i18next";
-import { localizePath } from "astro-i18next";
 import { HeadHrefLangs } from "astro-i18next/components";
+import MainNavigation from "../components/MainNavigation/MainNavigation.astro";
 
 const { title } = Astro.props;
-const isMenuItemActivated = (menuItemPath) => {
-	const pathname = Astro.url?.pathname || "/";
-	if (menuItemPath === `${localizePath("/")}`)
-		return menuItemPath === pathname;
-	return Astro.url?.pathname?.startsWith(menuItemPath);
-};
 ---
 
 <!DOCTYPE html>
@@ -26,41 +20,7 @@ const isMenuItemActivated = (menuItemPath) => {
 		<header
 			class="fixed inset-x-0 top-[20px] flex flex-row justify-center m-auto text-sm font-bold xs:text-lg sm:text-xl"
 		>
-			<nav
-				class="flex flex-row items-center backdrop-blur-md bg-black/30 rounded-full py-2 px-6 w-8/12 max-w-xs shadow-md"
-			>
-				<ul class="w-full flex flex-row justify-between">
-					<li
-						class={`${
-							isMenuItemActivated(localizePath("/"))
-								? "text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
-								: "text-white"
-						}`}
-					>
-						<a href={localizePath("/")}>{t("home.nav.home")}</a>
-					</li>
-					<li
-						class={`${
-							isMenuItemActivated(localizePath("/about"))
-								? "text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
-								: "text-white"
-						}`}
-					>
-						<a href={localizePath("/about")}
-							>{`${t("general.about-me")}.`}</a
-						>
-					</li>
-					<li
-						class={` ${
-							isMenuItemActivated(localizePath("/blog"))
-								? "text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
-								: "text-white"
-						}`}
-					>
-						<a href={localizePath("/blog")}>{t("home.nav.blog")}</a>
-					</li>
-				</ul>
-			</nav>
+			<MainNavigation />
 			<select
 				id="language-selector"
 				class="appearance-none backdrop-blur-md bg-black/30 text-2xl py-2 px-4 rounded-full cursor-pointer focus:rounded-xl"

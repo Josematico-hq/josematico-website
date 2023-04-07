@@ -1,6 +1,12 @@
 {
     "general": {
-        "about-me": "Acerca de mí"
+        "home": "Home",
+        "about-me": "Acerca de mí",
+        "post-card-link-aria-label": "Lee al completo el artículo",
+        "heading-link-aria-label": "Haz click aquí para navegar hasta el punto del post",
+        "internal-link-aria-label": "Haz click aquí para navegar hasta el punto de la página",
+        "main-navigation-link-aria-label": "Haz click aquí para ir a la página",
+        "social-link-aria-label": "Haz click aquí para ver mi perfil de"
     },
     "home": {
         "title": "Hola, soy José",

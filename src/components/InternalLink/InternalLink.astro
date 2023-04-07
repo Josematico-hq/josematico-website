@@ -1,8 +1,10 @@
 ---
+import i18next, { t } from "i18next";
+
 const { link } = Astro.props;
 ---
 
-<a href={link}>
+<a href={link} aria-label={`${t("general.internal-link-aria-label")} ${link}`}>
     <span
         class="bg-slate-800 py-1 px-2 text-xl text-slate-300 rounded-lg hover:underline hover:underline-offset-4"
     >

@@ -1,7 +1,12 @@
 {
     "general": {
         "home": "Home",
-        "about-me": "About me"
+        "about-me": "About me",
+        "post-card-link-aria-label": "Read the full post called",
+        "heading-link-aria-label": "Click here to navigate into the post point",
+        "internal-link-aria-label": "Click here to navigate into the page point",
+        "main-navigation-link-aria-label": "Click here to go to page",
+        "social-link-aria-label": "Click here to check my profile at"
     },
     "home": {
         "title": "Hi, I'm Jose",
