@@ -6,10 +6,19 @@
         "heading-link-aria-label": "Haz click aquí para navegar hasta el punto del post",
         "internal-link-aria-label": "Haz click aquí para navegar hasta el punto de la página",
         "main-navigation-link-aria-label": "Haz click aquí para ir a la página",
-        "social-link-aria-label": "Haz click aquí para ver mi perfil de"
+        "social-link-aria-label": "Haz click aquí para ver mi perfil de",
+        "individual-post-meta-description": {
+            "insight": "Esto es un post de josematico.com",
+            "title": "Título del post:",
+            "description": "Descripción:",
+            "date": "Publicado el:",
+            "author": "Autor: Josematico (me)",
+            "post-sections": "Estas son las secciones del post:"
+        }
     },
     "home": {
         "title": "Hola, soy José",
+        "meta-description": "Página principal del sitio web josematico.com. En esta página se muestra una bienvenida al sitio, resumen y los últimos posts del sitio web. Puedes hacer click en las diferentes secciones para ver más del sitio web al completo",
         "nav": {
             "home": "Home.",
             "about-me": "Acerca de mí.",
@@ -36,6 +45,7 @@
     },
     "about-me": {
         "title": "Conóceme",
+        "meta-description": "Conoce más sobre mí en la página 'Acerca de mí'. Aquí, profundizo en mi trayectoria profesional, experiencia laboral en varias empresas, formación académica y comparto algunas percepciones personales.",
         "nav": {
             "professional-experience": {
                 "pre-text": "Descubre mi",
@@ -137,6 +147,7 @@
         }
     },
     "blog": {
+        "meta-description": "Descubre mis pensamientos e ideas sobre diversos temas en la sección 'Blog', donde puedes encontrar mis últimas 5 publicaciones. Te invito a leer y participar con el contenido que he creado.",
         "description": "Bienvenido a la sección de Últimas Publicaciones del Blog, donde podrás ponerte al día sobre los temas en los que he estado escribiendo recientemente o sumergirte en todas mis publicaciones anteriores."
     }
 }

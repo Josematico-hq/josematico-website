@@ -3,7 +3,7 @@ import i18next, { t } from "i18next";
 import { HeadHrefLangs } from "astro-i18next/components";
 import MainNavigation from "../components/MainNavigation/MainNavigation.astro";
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -12,6 +12,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<HeadHrefLangs />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>

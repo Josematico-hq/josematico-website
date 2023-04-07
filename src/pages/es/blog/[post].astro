@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
 import MainLayout from "../../../layouts/MainLayout.astro";
 import CalendarIcon from "../../../components/Icon/CalendarIcon.astro";
@@ -25,9 +25,23 @@ const { entry } = Astro.props;
 const { Content, headings } = await entry.render();
 const { data: { title, pubDate, description, author, readTime, image }, } = entry;
 const formattedDate = localizeDate(pubDate);
+const formattedSections = headings.map((heading) => heading.text).join(",");
 ---
 
-<MainLayout title="Under construction">
+<MainLayout
+    title={title}
+    description={`${t("general.individual-post-meta-description.insight")}. ${t(
+        "general.individual-post-meta-description.title"
+    )} ${title}. ${t(
+        "general.individual-post-meta-description.description"
+    )} ${description}. ${t(
+        "general.individual-post-meta-description.date"
+    )} ${formattedDate}. ${t(
+        "general.individual-post-meta-description.author"
+    )}. ${t(
+        "general.individual-post-meta-description.post-sections"
+    )} ${formattedSections}`}
+>
     <h1
         class="font-bold text-4xl md:text-5xl mt-32 mb-4 mx-4 md:mx-10 leading-9 text-center"
     >

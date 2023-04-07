@@ -6,10 +6,19 @@
         "heading-link-aria-label": "Click here to navigate into the post point",
         "internal-link-aria-label": "Click here to navigate into the page point",
         "main-navigation-link-aria-label": "Click here to go to page",
-        "social-link-aria-label": "Click here to check my profile at"
+        "social-link-aria-label": "Click here to check my profile at",
+        "individual-post-meta-description": {
+            "insight": "This is a post on josematico.com",
+            "title": "Post title:",
+            "description": "Preview:",
+            "date": "Published on:",
+            "author": "Author: Josematico (me)",
+            "post-sections": "These are the post sections:"
+        }
     },
     "home": {
         "title": "Hi, I'm Jose",
+        "meta-description": "Main page of the josematico.com website. On this page, you'll find a warm welcome to the site, a summary, and the latest blog posts. You can click on the different sections to explore the entire website in more detail",
         "nav": {
             "home": "Home.",
             "about-me": "About me.",
@@ -36,6 +45,7 @@
     },
     "about-me": {
         "title": "Get to know me",
+        "meta-description": "Learn more about me on the 'About Me' page. Here, you can dive deeper into my professional background, work experience across various companies, educational qualifications, and share some personal insights.",
         "nav": {
             "professional-experience": {
                 "pre-text": "Discover my",
@@ -137,6 +147,7 @@
         }
     },
     "blog": {
+        "meta-description": "Discover my thoughts and ideas on various topics in the 'Blog' section, where you can find my latest 5 posts. I invite you to read and engage with the content I've created.",
         "description": "Welcome to the Latest Blog Posts section, where you can catch up on what I've been writing about recently or dive into all my previous posts."
     }
 }
