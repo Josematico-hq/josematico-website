@@ -6,6 +6,16 @@ module.exports = {
     extend: {
       screens: {
         xs: '400px'
+      },
+      backgroundPosition: {
+        '0%': '0',
+        '100%': '100%'
+      },
+      backgroundSize: {
+        '400%': '400%'
+      },
+      transitionProperty: {
+        'background-position': 'background-position'
       }
     }
   },

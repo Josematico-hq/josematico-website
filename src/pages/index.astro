@@ -10,6 +10,7 @@ import GithubIcon from "../components/Icon/GithubIcon.astro";
 import ChevronRight from "../components/Icon/ChevronRight.astro";
 import DocumentTextIcon from "../components/Icon/DocumentTextIcon.astro";
 import PostCard from "../components/PostCard/PostCard.astro";
+import LinkButton from "../components/LinkButton/LinkButton.astro";
 
 changeLanguage("en");
 
@@ -53,6 +54,8 @@ const posts = blogEntries
             >
         </div>
     </section>
+
+    <!-- About me -->
     <section class="my-20">
         <h2
             class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-green-200 to-green-500"
@@ -65,22 +68,14 @@ const posts = blogEntries
         <p class="text-xl my-4">{t("home.about-me.paragraph-1")}</p>
         <p class="text-xl my-4">{t("home.about-me.paragraph-2")}</p>
         <p class="text-xl my-4">{t("home.about-me.paragraph-3")}</p>
-        <a
-            href={localizePath("/about")}
-            rel="noreferrer"
-            class="flex flex-row justify-between items-center p-6 my-6 bg-gray-800 rounded-lg shadow-lg border border-gray-500 md:max-w-sm focus:translate-y-1"
-        >
-            <div class="flex flex-col w-3/4">
-                <span class="font-bold"
-                    >{t("home.about-me.about-me-more-button-1")}</span
-                >
-                <span class="text-slate-400 leading-4"
-                    >{t("home.about-me.about-me-more-button-2")}</span
-                >
-            </div>
+        <LinkButton link={localizePath("/about")}>
+            <span class="mr-2">{t("home.about-me.about-me-more-button-1")}</span
+            >
             <ChevronRight />
-        </a>
+        </LinkButton>
     </section>
+
+    <!-- Posts -->
     <section class="mb-10">
         <h2
             class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
@@ -110,16 +105,12 @@ const posts = blogEntries
         }
         {
             posts?.length > 0 && (
-                <a
-                    href={localizePath("/blog")}
-                    rel="noreferrer"
-                    class="flex flex-row justify-center items-center p-4 my-6 bg-gray-800 rounded-lg shadow-lg border border-gray-500 md:max-w-sm focus:translate-y-1"
-                >
+                <LinkButton link={localizePath("/blog")}>
                     <span class="mr-2">
                         {t("home.posts.more-posts-button")}
                     </span>
                     <DocumentTextIcon />
-                </a>
+                </LinkButton>
             )
         }
     </section>

@@ -83,13 +83,11 @@ const isMenuItemActivated = (menuItemPath) => {
 			}
 		</style>
 		<script>
-			import { DEFAULT_LANG, languages } from "../shared/constants";
-
+			import { DEFAULT_LANG } from "../shared/constants";
 			import { getLanguage } from "../shared/utils";
 
 			const $ = (selector) => document.querySelector(selector);
 			const languageSelector = $("#language-selector");
-			const styleModeSelector = $("#style-mode-selector");
 
 			const detectLanguage = () => {
 				const language = getLanguage()?.code;
