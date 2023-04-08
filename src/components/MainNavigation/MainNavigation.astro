@@ -1,24 +1,67 @@
 ---
 import { localizePath } from "astro-i18next";
-import i18next, { t } from "i18next";
+import { t } from "i18next";
 
-const isMenuItemActivated = (menuItemPath) => {
-    const pathname = Astro.url?.pathname || "/";
-    if (menuItemPath === `${localizePath("/")}`)
-        return menuItemPath === pathname;
-    return Astro.url?.pathname?.startsWith(menuItemPath);
-};
+function isMenuItemActive(menuItem) {
+    if (!menuItem || typeof menuItem !== "string") {
+        console.error("Invalid menu item provided");
+        return false;
+    }
+
+    const pathParts = getPathParts(Astro.url.pathname);
+
+    if (menuItem === "home") {
+        return isHomePage(pathParts);
+    }
+
+    return isMenuItemInPath(menuItem, pathParts);
+}
+
+function getPathParts(pathname) {
+    if (!pathname || typeof pathname !== "string") {
+        return [];
+    }
+
+    return pathname.split("/").filter((part) => part);
+}
+
+function isHomePage(pathParts) {
+    if (!Array.isArray(pathParts)) {
+        return false;
+    }
+
+    return (
+        pathParts.length === 0 ||
+        (pathParts.length === 1 && pathParts[0].length === 2)
+    );
+}
+
+function isMenuItemInPath(menuItem, pathParts) {
+    if (!Array.isArray(pathParts)) {
+        return false;
+    }
+
+    const hasLanguageCode = pathParts[0]?.length === 2;
+    const localizedPath = hasLanguageCode ? pathParts.slice(1) : pathParts;
+    const firstPath = localizedPath[0];
+
+    return menuItem === firstPath;
+}
+
 const navItems = [
     {
-        path: "/",
+        item: "home",
+        path: localizePath("/"),
         text: t("home.nav.home"),
     },
     {
-        path: "/about",
+        item: "about",
+        path: localizePath("/about"),
         text: `${t("general.about-me")}.`,
     },
     {
-        path: "/blog",
+        item: "blog",
+        path: localizePath("/blog"),
         text: t("home.nav.blog"),
     },
 ];
@@ -29,16 +72,16 @@ const navItems = [
 >
     <ul class="w-full flex flex-row justify-between">
         {
-            navItems.map(({ path, text }) => (
+            navItems.map(({ path, text, item }) => (
                 <li
                     class={`${
-                        isMenuItemActivated(localizePath(path))
+                        isMenuItemActive(item)
                             ? "text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
                             : "text-white"
-                    }`}
+                    } transition duration-300 hover:scale-105`}
                 >
                     <a
-                        href={localizePath(path)}
+                        href={path}
                         aria-label={`${t(
                             "general.main-navigation-link-aria-label"
                         )} ${text}`}
