@@ -14,7 +14,7 @@ changeLanguage("es");
 
 export async function getStaticPaths() {
     const blogEntries = await getCollection("blog", ({ id }) => {
-        return id.startsWith("en/");
+        return id.startsWith("es/");
     });
     return blogEntries.map((entry) => ({
         params: { post: entry.slug },

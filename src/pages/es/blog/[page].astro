@@ -7,7 +7,7 @@ changeLanguage("es");
 
 export async function getStaticPaths() {
     const blogEntries = await getCollection("blog", ({ id }) => {
-        return id.startsWith("en/");
+        return id.startsWith("es/");
     });
     const postsPerPage = 5;
     const totalPages = Math.ceil(blogEntries.length / postsPerPage);

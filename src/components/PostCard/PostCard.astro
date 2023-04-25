@@ -24,13 +24,13 @@ const isNew = isLessThanAWeekAgo(localizedDate);
     <article
         class="p-6 md:p-8 bg-slate-800 mb-2 rounded-xl border-2 border-gray-700 transition-colors ease-linear duration-200 hover:text-yellow-300 hover:border-yellow-200"
     >
-        <div class="flex flex-row items-center mb-1">
+        <div class="flex flex-row items-center mb-2">
             {isNew && <div class="px-3 bg-blue-400 rounded-xl mr-2">new</div>}
             <span data-client-date={localizedDate} class="text-gray-300"
                 >{localizedDate}</span
             >
         </div>
-        <h4 class="font-bold text-xl md:text-2xl mb-1">
+        <h4 class="font-bold text-xl md:text-2xl mb-1 leading-tight">
             {title}
         </h4>
         <p class="text-lg md:text-xl text-slate-300 leading-5">{preview}</p>
