@@ -18,7 +18,7 @@ const blogEntries = await getCollection("blog", ({ id }) => {
     return id.startsWith("en/");
 });
 const posts = blogEntries
-    .sort((entryA, entryB) => entryA.data.pubDate - entryB.data.pubDate)
+    .sort((entryA, entryB) => entryB.data.pubDate - entryA.data.pubDate)
     .slice(0, 3);
 ---
 

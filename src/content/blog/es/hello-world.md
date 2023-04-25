@@ -5,7 +5,7 @@ pubDate: 2023-03-28
 preview: "¡Saludos a todos! 👋 Soy José Carlos, y estoy emocionado de darles la bienvenida a mi blog"
 author: 'José Carlos'
 readTime: '2 min'
-tags: ["blogging", "aprendizaje en público", "desarrollo personal"]
+tags: ["astro", "blogging", "learning in public"]
 slug: "hello-world"
 ---
 

@@ -8,7 +8,9 @@ changeLanguage("en");
 const blogEntries = await getCollection("blog", ({ id }) => {
     return id.startsWith("en/");
 });
-const entries = blogEntries.slice(0, 5);
+const entries = blogEntries
+    .sort((entryA, entryB) => entryB.data.pubDate - entryA.data.pubDate)
+    .slice(0, 5);
 ---
 
 <BlogLayout entries={entries} />
