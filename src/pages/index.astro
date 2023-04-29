@@ -1,16 +1,11 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
 import { Trans } from "astro-i18next/components";
-import { localizePath } from "astro-i18next";
-import i18next, { t, changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
-import LinkedInIcon from "../components/Icon/LinkedInIcon.astro";
-import InstagramIcon from "../components/Icon/InstagramIcon.astro";
-import GithubIcon from "../components/Icon/GithubIcon.astro";
-import ChevronRight from "../components/Icon/ChevronRight.astro";
-import DocumentTextIcon from "../components/Icon/DocumentTextIcon.astro";
-import PostCard from "../components/PostCard/PostCard.astro";
-import LinkButton from "../components/LinkButton/LinkButton.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import AboutMeSection from "../components/Home/AboutMe/AboutMeSection.astro";
+import PostsSection from "../components/Home/PostsSection/PostsSection.astro";
+import SocialLinks from "../components/Home/SocialLInks/SocialLinks.astro";
 
 changeLanguage("en");
 
@@ -18,7 +13,7 @@ const blogEntries = await getCollection("blog", ({ id }) => {
     return id.startsWith("en/");
 });
 const posts = blogEntries
-    .sort((entryA, entryB) => entryB.data.pubDate - entryA.data.pubDate)
+    .sort((entryA, entryB) => Number(entryB.data.pubDate) - Number(entryA.data.pubDate))
     .slice(0, 3);
 ---
 
@@ -36,86 +31,11 @@ const posts = blogEntries
         </h1>
 
         <h2 class="text-3xl my-4">{t("home.header.description")}</h2>
-        <div class="flex flex-row justify-between items-center w-24 mt-6">
-            <a
-                href="https://www.linkedin.com/in/jocafernanro"
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${t("general.social-link-aria-label")} LinkedIn`}
-                ><LinkedInIcon /></a
-            >
-            <a
-                href="https://github.com/jocafernanro"
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${t("general.social-link-aria-label")} Github`}
-                ><GithubIcon /></a
-            >
-            <a
-                href="https://www.instagram.com/jocafernanro/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${t("general.social-link-aria-label")} Instagram`}
-                ><InstagramIcon /></a
-            >
-        </div>
+
+        <SocialLinks />
     </section>
 
-    <!-- About me -->
-    <section class="my-20">
-        <h2
-            class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-green-200 to-green-500"
-        >
-            {t("general.about-me")}.
-        </h2>
-        <h3 class="text-xl text-slate-300 mb-4">
-            {t("home.about-me.description")}
-        </h3>
-        <p class="text-xl my-4">{t("home.about-me.paragraph-1")}</p>
-        <p class="text-xl my-4">{t("home.about-me.paragraph-2")}</p>
-        <p class="text-xl my-4">{t("home.about-me.paragraph-3")}</p>
-        <LinkButton link={localizePath("/about")}>
-            <span class="mr-2">{t("home.about-me.about-me-more-button-1")}</span
-            >
-            <ChevronRight />
-        </LinkButton>
-    </section>
+    <AboutMeSection />
 
-    <!-- Posts -->
-    <section class="mb-10">
-        <h2
-            class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
-        >
-            {t("home.posts.title")}
-        </h2>
-        <h3 class="text-xl text-slate-300 mb-4">
-            {t("home.posts.description")}
-        </h3>
-        {
-            posts?.length > 0 ? (
-                posts.map(({ data: { title, pubDate, preview }, slug }) => (
-                    <PostCard
-                        pubDate={pubDate}
-                        title={title}
-                        slug={slug}
-                        preview={preview}
-                    />
-                ))
-            ) : (
-                <div class="p-10 bg-gray-800 rounded-xl text-gray-600">
-                    {t("home.posts.no-posts")}
-                </div>
-            )
-        }
-        {
-            posts?.length > 0 && (
-                <LinkButton link={localizePath("/blog")}>
-                    <span class="mr-2">
-                        {t("home.posts.more-posts-button")}
-                    </span>
-                    <DocumentTextIcon />
-                </LinkButton>
-            )
-        }
-    </section>
+    <PostsSection posts={posts} />
 </MainLayout>

@@ -1,0 +1,26 @@
+---
+import { t } from "i18next";
+import { localizePath } from "astro-i18next";
+import ChevronRight from "../../../components/Icon/ChevronRight.astro";
+import LinkButton from "../../../components/LinkButton/LinkButton.astro";
+import BasicParagraph from "../../Basics/BasicParagraph/BasicParagraph.astro";
+---
+
+<section class="my-20">
+    <h2
+        class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-green-200 to-green-500"
+    >
+        {t("general.about-me")}.
+    </h2>
+    <h3 class="text-xl text-slate-300 mb-4">
+        {t("home.about-me.description")}
+    </h3>
+    <BasicParagraph>{t("home.about-me.paragraph-1")}</BasicParagraph>
+    <BasicParagraph>{t("home.about-me.paragraph-2")}</BasicParagraph>
+    <BasicParagraph>{t("home.about-me.paragraph-3")}</BasicParagraph>
+
+    <LinkButton link={localizePath("/about")}>
+        <span class="mr-2">{t("home.about-me.about-me-more-button-1")}</span>
+        <ChevronRight />
+    </LinkButton>
+</section>
