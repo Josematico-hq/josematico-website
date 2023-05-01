@@ -2,7 +2,7 @@
 title: 'Adopta los Arrays No Mutativos con ES14: Nuevos Métodos Propuestos en JavaScript'
 description: "Explora los innovadores métodos de arrays no mutativos de ECMAScript 2023 (ES14), abriendo caminos para una programación eficiente y segura."
 pubDate: 2023-04-29
-preview: "Descubre el poder de 'Cambiar Array por Copia' con los nuevos métodos de JavaScript en ES14: toReversed(), toSorted() y toSpliced()."
+preview: "Descubre el poder de 'Change Array by Copy' con los nuevos métodos de JavaScript en ES14: toReversed(), toSorted(), toSpliced() y with()."
 author: 'José Carlos'
 readTime: '5 min'
 tags: ["javascript", "ecmascript", "web development", "coding", "es14"]

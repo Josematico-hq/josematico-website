@@ -2,7 +2,7 @@
 title: 'Unlock the Power of Modern JavaScript: 4 Essential ECMAScript 6 Features You Need to Know'
 description: "Discover the power of modern JavaScript by mastering four fundamental ECMAScript 6 features that will elevate your coding skills and improve your web development projects."
 pubDate: 2023-04-25
-preview: "Join me as we delve into the essential ECMAScript 6 features, unlocking the potential of modern JavaScript for more efficient and maintainable web applications."
+preview: "Delve into the essential ECMAScript 6 features, unlocking the potential of modern JavaScript for more efficient and maintainable web applications."
 author: 'José Carlos'
 readTime: '5 min'
 tags: ["javascript", "ecmascript", "web development", "coding"]

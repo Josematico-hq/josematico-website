@@ -2,7 +2,7 @@
 title: 'Desbloquea el Poder del JavaScript Moderno: 4 Características Esenciales de ECMAScript 6 que Debes Conocer'
 description: "Descubre el poder del JavaScript moderno dominando cuatro características fundamentales de ECMAScript 6 que elevarán tus habilidades de codificación y mejorarán tus proyectos de desarrollo web."
 pubDate: 2023-04-25
-preview: "Acompáñame mientras nos adentramos en las características esenciales de ECMAScript 6, desbloqueando el potencial del JavaScript moderno para aplicaciones web más eficientes y mantenibles."
+preview: "Conoce algunas características esenciales de ECMAScript 6, desbloqueando el potencial del JavaScript moderno para aplicaciones web más eficientes y mantenibles."
 author: 'José Carlos'
 readTime: '5 min'
 tags: ["javascript", "ecmascript", "web development", "coding"]

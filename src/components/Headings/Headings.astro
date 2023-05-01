@@ -5,7 +5,7 @@ const { headings = [] } = Astro.props;
 ---
 
 {
-    headings?.length > 0 && (
+    headings?.length && (
         <nav class="bg-slate-800 py-6 px-8 md:py-8 md:px-10 rounded-lg mb-8 tracking-wide">
             <div class="text-slate-300 font-bold text-lg md:text-xl mb-4">
                 {t("blog.table-of-contents").toUpperCase()}

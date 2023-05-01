@@ -23,7 +23,9 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const { Content, headings } = await entry.render();
-const { data: { title, pubDate, description, author, readTime, image }, } = entry;
+const {
+    data: { title, pubDate, description, author, readTime, image },
+} = entry;
 const formattedDate = localizeDate(pubDate);
 const formattedSections = headings.map((heading) => heading.text).join(",");
 ---
@@ -61,49 +63,6 @@ const formattedSections = headings.map((heading) => heading.text).join(",");
         <Content />
     </div>
 </MainLayout>
-
-<script>
-    const openPopup = (url) => {
-        const popupWidth = 600;
-        const popupHeight = 400;
-        const left = (window.screen.width - popupWidth) / 2;
-        const top = (window.screen.height - popupHeight) / 2;
-
-        window.open(
-            url,
-            "Compartir en redes sociales",
-            `width=${popupWidth},height=${popupHeight},top=${top},left=${left},scrollbars=no`
-        );
-    };
-
-    const shareConfig = {
-        facebook: {
-            getUrl: (postUrl, text) =>
-                `https://www.facebook.com/sharer/sharer.php?u=${postUrl}&t=${text}`,
-        },
-        twitter: {
-            getUrl: (postUrl, text) =>
-                `https://twitter.com/intent/tweet?url=${postUrl}&text=${text}`,
-        },
-        linkedin: {
-            getUrl: (postUrl) =>
-                `https://www.linkedin.com/sharing/share-offsite/?url=${postUrl}`,
-        },
-    };
-
-    document.querySelectorAll(".share-button").forEach((button) => {
-        const platform = button.id.split("-")[1];
-        const { getUrl } = shareConfig[platform];
-
-        button.addEventListener("click", () => {
-            const postUrl = encodeURIComponent(window.location.href);
-            const text = encodeURIComponent(document.title);
-            const url = getUrl(postUrl, text);
-
-            openPopup(url);
-        });
-    });
-</script>
 
 <style is:global>
     .post-content {

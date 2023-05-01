@@ -2,7 +2,7 @@
 title: 'Domina más características de ECMAScript 6: 4 funciones esenciales para potenciar tu código JavaScript'
 description: "Profundiza en las características de ECMAScript 6 y domina nuevas funciones para mejorar tus habilidades de codificación y optimizar tus proyectos de desarrollo web."
 pubDate: 2023-04-26
-preview: "Acompáñame mientras exploramos más funciones icónicas de ECMAScript 6 y desbloqueamos el potencial del JavaScript moderno para aplicaciones web más eficientes y fáciles de mantener."
+preview: "En este artículo, aprenderás acerca de las funcionalidades esenciales de ECMAScript 6 y cómo el uso del JavaScript moderno puede permitirte desarrollar aplicaciones web más eficientes y sencillas de mantener."
 author: 'José Carlos'
 readTime: '5 min'
 tags: ["javascript", "ecmascript", "web development", "coding"]
