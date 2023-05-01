@@ -46,6 +46,7 @@
     },
     "about-me": {
         "title": "Get to know me",
+        "description": "Get to know me better by checking out my work adventures, school days, and those extra bits that make my personal story uniquely mine.",
         "meta-description": "Learn more about me on the 'About Me' page. Here, you can dive deeper into my professional background, work experience across various companies, educational qualifications, and share some personal insights.",
         "nav": {
             "professional-experience": {
