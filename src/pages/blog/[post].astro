@@ -23,9 +23,7 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const { Content, headings } = await entry.render();
-const {
-    data: { title, pubDate, description, author, readTime, image },
-} = entry;
+const { data: { title, pubDate, description, author, readTime, image }, } = entry;
 const formattedDate = localizeDate(pubDate);
 const formattedSections = headings.map((heading) => heading.text).join(",");
 ---
