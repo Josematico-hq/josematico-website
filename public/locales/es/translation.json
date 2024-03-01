@@ -27,13 +27,14 @@
         },
         "header": {
             "title": "Ingeniero de software, <0>multipotencial</0> y creativo.",
-            "description": "Hola, soy José. Más de 10 años de experiencia en la industria tecnológica y Tech Lead Engineer en Sopra Steria."
+            "description": "Hola, soy José. Más de 10 años de experiencia en la industria tecnológica y Manager de Ingeniería en Sopra Steria."
         },
         "about-me": {
             "description": "Conoce un poco más acerca de mí",
             "paragraph-1": "Persona creativa y multipotencial, apasionado ingeniero de software, emprendedor, con un gran interés en el desarrollo personal y humano, así como en liderazgo, ética y arte.",
             "paragraph-2": "He desempeñado roles de desarrollo, análisis, arquitectura y liderazgo dentro de los equipos en los que he trabajado.",
-            "paragraph-3": "Estos últimos cuatro años he estado trabajando como líder técnico en un equipo de desarrollo de videojuegos ágil utilizando tecnologías frontend de vanguardia: ES6+, reactividad, gestión de estados, webpack/vite, babel, i18next, etc.",
+            "paragraph-3": "Estos últimos cinco años he estado trabajando como líder técnico en un equipo de desarrollo de videojuegos ágil utilizando tecnologías frontend de vanguardia: ES6+, reactividad, gestión de estados, webpack/vite, babel, i18next, etc.",
+            "paragraph-4": "Como Manager de Ingeniería actualmente, mi rol implica apoyar activamente a equipos en diversos dominios — Gaming, integraciones con vendors y proyectos internos de la empresa — para potenciar su crecimiento y maximizar la entrega de valor.",
             "about-me-more-button-1": "Saber más",
             "about-me-more-button-2": "Descubre más información, descarga mi currículum, etc."
         },
@@ -73,15 +74,16 @@
         },
         "professional-experience": {
             "title": "Experiencia profesional",
-            "paragraph-1": "¡Hola! Soy José, un apasionado ingeniero de software con más de 10 años de experiencia en la industria tecnológica. Como líder técnico en Sopra Steria, he estado profundizando en tecnologías frontend, metodologías ágiles y soluciones orientadas a devops/nube durante más de cuatro años. Me enorgullezco de guiar a mi equipo a través de procesos, innovación y aprendizaje.",
+            "paragraph-1": "¡Hola! Soy José, un apasionado ingeniero de software con más de 10 años de experiencia en la industria tecnológica. Como Manager de Ingeniería en Sopra Steria, he estado profundizando en tecnologías frontend, metodologías ágiles y soluciones orientadas a devops/nube durante más de cinco años. Me enorgullezco de guiar a mi equipo a través de procesos, innovación y aprendizaje.",
             "paragraph-2": "Sin embargo, mi viaje no termina ahí. También me he adentrado en el mundo freelance, perfeccionando una variedad de habilidades en el camino. Como auténtico amante de la tecnología, me resulta emocionante abordar desafíos de software en mi tiempo libre, creando productos y desarrollando ideas. ¡Me encanta construir, crear y resolver problemas, eso es lo que me hace hace seguir adelante!",
             "job": {
                 "sopra": {
                     "company": "Sopra Steria",
                     "time": "nov 2018 - actualidad",
-                    "title": "Teach Lead Engineer",
+                    "title": "Engineering Manager",
                     "description-1": "Fase 1: Airbus Defense and Space: Arquitectura de software, análisis y desarrollo. Python, blockchain, Angular, Microservicios, UIPath, gRPC, etc.",
-                    "description-2": "Fase 2 (Actual): The Workshop - Trabajando en videojuegos de casino como Ingeniero Líder en Tecnología en un entorno internacional con tecnologías Frontend y metodologías ágiles: WebGL, Pixi.js, Javascript (ES6+) OOP y patrones de diseño, Mobx, Reactividad, Jest."
+                    "description-2": "Fase 2: The Workshop - Trabajando en videojuegos de casino como Ingeniero Líder en Tecnología en un entorno internacional con tecnologías Frontend y metodologías ágiles: WebGL, Pixi.js, Javascript (ES6+) OOP y patrones de diseño, Mobx, Reactividad, Jest.",
+                    "description-3": "Fase 3 (Actual): The Workshop -  Como Manager de Ingeniería, me estoy enfocando en Gaming, integraciones con vendors e iniciativas internas de la empresa. Mi rol implica guiar a los equipos para alcanzar su máximo potencial, asegurando la entrega del máximo valor y mejorando la satisfacción del equipo mediante la aplicación de metodologías Lean y Agile"
                 },
                 "eduka": {
                     "company": "Eduka",

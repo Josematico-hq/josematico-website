@@ -27,13 +27,14 @@
         },
         "header": {
             "title": "Software engineer, <0>multipotential</0> and creative person.",
-            "description": "Hi, I'm Jose. More than 10+ years of experience on the tech industry and Technical Lead Engineer at Sopra Steria."
+            "description": "Hi, I'm Jose. More than 10+ years of experience on the tech industry and Engineering Manager at Sopra Steria."
         },
         "about-me": {
             "description": "Know a little more about me",
             "paragraph-1": "Creative & multipotential person, passionate software engineer, entrepreneur, with a strong interest in personal and human development, as well as in leadership, ethics, and art.",
             "paragraph-2": "I have played  development, analysis, architecture and leadership roles within the teams I have worked in.",
-            "paragraph-3": "These last four years I've been working as a Tech Lead Engineer in an agile videogame development team using cutting-edge frontend technologies: ES6+, reactivity, statemanagement, webpack/vite, babel, i18next, etc.",
+            "paragraph-3": "These last five years I've been working as a Tech Lead Engineer in an agile videogame development team using cutting-edge frontend technologies: ES6+, reactivity, statemanagement, webpack/vite, babel, i18next, etc.",
+            "paragraph-4": "As an Engineering Manager now, my role actively involved supporting teams across various domains —Gaming, Vendor Integrations, and Internal Company Projects— to enhance their growth and maximize value delivery.",
             "about-me-more-button-1": "Know more",
             "about-me-more-button-2": "Discover more info, download my resume, etc."
         },
@@ -73,15 +74,16 @@
         },
         "professional-experience": {
             "title": "Professional Experience",
-            "paragraph-1": "Hey there! I'm Jose, a passionate software engineer with over 10 years of experience in the tech industry. As a Tech Lead Engineer at Sopra Steria, I've been diving deep into frontend technologies, agile methodologies, and devops/cloud-oriented solutions for more than four years. I pride myself on guiding my team through processes, innovation and learning.",
+            "paragraph-1": "Hey there! I'm Jose, a passionate software engineer with over 10 years of experience in the tech industry. As a Engineering Manager at Sopra Steria, I've been diving deep into frontend technologies, agile methodologies, and devops/cloud-oriented solutions for more than five years. I pride myself on guiding my team through processes, innovation and learning.",
             "paragraph-2": "My journey doesn't end there, though. I've also ventured into the freelance world, honing a variety of skills along the way. As a genuine tech lover, I find it thrilling to tackle software challenges in my free time, creating products and developing ideas. I'm all about building, creating, and solving problems—that's what keeps me going!",
             "job": {
                 "sopra": {
                     "company": "Sopra Steria",
                     "time": "nov 2018 - current",
-                    "title": "Tech Lead Engineer",
+                    "title": "Engineering Manager",
                     "description-1": "Phase 1: Airbus Defense and Space: Software Architecture, analysis and development. Python, blockchain, Angular, Microservices, UIPath, gRPC, etc.",
-                    "description-2": "Phase 2 (Current): The Workshop - Working on Casino Videogames as Tech Lead Engineer on an international environment with Frontend Technologies and Agile Methodologies: WebGL, Pixi.js, Javascript (ES6+) OOP and design Patterns, Mobx, Reactivity, Jest."
+                    "description-2": "Phase 2: The Workshop - Working on Casino Videogames as Tech Lead Engineer on an international environment with Frontend Technologies and Agile Methodologies: WebGL, Pixi.js, Javascript (ES6+) OOP and design Patterns, Mobx, Reactivity, Jest.",
+                    "description-3": "Phase 3 (Current): The Workshop - As an Engineering Manager, I am focusing on Gaming, Vendor integrations, and Internal company initiatives. My role involves guiding teams to reach their full potential, ensuring the delivery of maximum value, and enhancing team satisfaction by employing Lean and Agile methodologies"
                 },
                 "eduka": {
                     "company": "Eduka",
